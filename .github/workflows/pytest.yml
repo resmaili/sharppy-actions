@@ -61,3 +61,4 @@ jobs:
     - name: Run test
       run: |
         conda activate devel
+        system_profiler SPDisplaysDataType | grep Resolution
