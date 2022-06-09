@@ -44,13 +44,13 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v3
 
-    # Load cache, if available
-    # - name: Setup conda env caching
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: ${{ matrix.prefix }}
-    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-    #   id: cache
+    Load cache, if available
+    - name: Setup conda env caching
+      uses: actions/cache@v2
+      with:
+        path: ${{ matrix.prefix }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+      id: cache
 
     # Call .action to install or use cached Python/env
     - name: Install Conda
@@ -61,6 +61,7 @@ jobs:
         prefix: ${{ matrix.prefix }}
 
     - name: Run pytest
+      shell: bash -l {0}
       run: |
         conda init bash
         conda activate devel
