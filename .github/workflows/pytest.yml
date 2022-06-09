@@ -42,9 +42,11 @@ jobs:
         type: 'test'
         python-version: ${{ matrix.python-version }}
 
-    # - name: Install
-    #   shell: bash -l {0}
-    #   run: |
+    - name: run pytest
+      shell: bash -l {0}
+      with:
+        activate-environment: devel
+      run: which python.app
     #     mamba env create --file environment.yml
     #     conda activate devel
     #     mamba install -y -q -c anaconda python.app

@@ -11,10 +11,9 @@ dependencies:
   - pytest
   - qtpy
   - sphinx_rtd_theme
-  #- sphinx-gallery
-  #Sphinx-Gallery removed because it requires matplotlib/pyqt and conflicts with pyside2's Qt version
+  - python.app
   - requests
-  - python-dateutil 
+  - python-dateutil
   - pyinstaller
   - setuptools
   - certifi
