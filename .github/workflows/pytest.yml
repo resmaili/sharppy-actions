@@ -61,5 +61,5 @@ jobs:
     - name: Run pytest
       run: |
         conda activate devel
-        echo which pytest
+        pyinstaller SHARPpy-osx.spec --noconsole --onefile --log-level DEBUG
         # python -m pytest -v --junitxml=junit/test-results.xml

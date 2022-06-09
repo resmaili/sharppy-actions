@@ -24,7 +24,7 @@ runs:
         # Needed for caching
         use-only-tar-bz2: true
 
-    - name: Setup conda caching
+    - name: Setup conda env caching
       uses: actions/cache@v2
       with:
         path: ${{ matrix.prefix }}
