@@ -51,14 +51,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
         prefix: ${{ matrix.prefix }}
 
-    # - name: Load cached environment
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: ${{ matrix.prefix }}
-    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-    #   id: cache
-
     - name: Run pytest
+      with:
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
       run: |
         conda activate devel
         pyinstaller SHARPpy-osx.spec --noconsole --onefile --log-level DEBUG
