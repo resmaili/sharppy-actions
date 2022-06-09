@@ -38,17 +38,15 @@ jobs:
 
     name: ${{ matrix.label }} ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
-    
-    runs:
-      using: "composite"
-      steps:
-      # Checkout the repo onto vm
-      - name: Checkout source
-        uses: actions/checkout@v3
 
-      # Call .action to install or use cached Python/env
-      - name: Install Conda
-        uses: ./.github/actions/install-conda
-        with:
-          python-version: ${{ matrix.python-version }}
-          prefix: ${{ matrix.prefix }}
+    steps:
+    # Checkout the repo onto vm
+    - name: Checkout source
+      uses: actions/checkout@v3
+
+    # Call .action to install or use cached Python/env
+    - name: Install Conda
+      uses: ./.github/actions/install-conda
+      with:
+        python-version: ${{ matrix.python-version }}
+        prefix: ${{ matrix.prefix }}
