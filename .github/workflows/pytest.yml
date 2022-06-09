@@ -61,4 +61,5 @@ jobs:
     - name: Run pytest
       run: |
         conda activate devel
-        python -m pytest -v --junitxml=junit/test-results.xml
+        echo which pytest
+        # python -m pytest -v --junitxml=junit/test-results.xml
