@@ -1,59 +1,52 @@
 name: pytest
 
-# We don't want pushes (or PRs) to gh-pages to kick anything off
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  # schedule:
+  #   - cron: '0 0 * * *'
 
-concurrency:
-  group: ${{ github.workflow}}-${{ github.head_ref }}
-  cancel-in-progress: true
+# concurrency:
+#   group: ${{ github.workflow}}-${{ github.head_ref }}
+#   cancel-in-progress: true
 
 jobs:
-
-  # Run all tests on Conda on both Windows and macOS
-  CondaTests:
-    name: ${{ matrix.os }} ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}-latest
+  build:
     defaults:
       run:
         shell: bash -l {0}
+
+    # Control the os/python builds
     strategy:
-      fail-fast: false
+      prefix: [/usr/share/miniconda3/envs/my-env]
       matrix:
         python-version: [3.8]
-        os: [macOS]
+        include:
+          - os: ubuntu-latest
+            label: linux-64
+            prefix: /usr/share/miniconda3/envs/my-env
 
+          - os: macos-latest
+            label: osx-64
+            prefix: /Users/runner/miniconda3/envs/my-env
+
+          - os: windows-latest
+            label: win-64
+            prefix: C:\Miniconda3\envs\my-env
+
+
+    name: ${{ matrix.label }}
+    runs-on: ${{ matrix.os }}
     steps:
-    # We check out only a limited depth and then pull tags to save time
+    # Checkout the repo onto vm
     - name: Checkout source
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 100
 
-#     - name: Get tags
-#       run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
-
-    - name: Install from Conda
+    # Call .action to install or use cached Python/env
+    - name: Install Conda
       uses: ./.github/actions/install-conda
       with:
-        type: 'test'
         python-version: ${{ matrix.python-version }}
-
-    # - name: run pytest
-    #   shell: bash -l {0}
-    #   with:
-    #     activate-environment: devel
-    #   run: which python.app
-    #     mamba env create --file environment.yml
-    #     conda activate devel
-    #     mamba install -y -q -c anaconda python.app
-    #     which python.app
-    #     ls /usr/local/miniconda/python.app/Contents/Resources
-    #     # Check display dimensions using OS tools
-    #     system_profiler SPDisplaysDataType | grep Resolution
-    #     # Check display dimensions as seen by PySide
-    #     python ci/screen.py
-    #     pip install -e .
+        prefix: ${{ matrix.prefix }}

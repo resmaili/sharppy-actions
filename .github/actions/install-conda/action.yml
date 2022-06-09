@@ -1,49 +1,35 @@
-name: 'Install from Conda'
-description: 'Setup environment and install using a Conda-based toolchain'
+name: Install Conda
 inputs:
-  type:
-    description: 'Whether test or doc build'
-    required: true
   python-version:
     description: 'What version of Python to use'
     required: true
-runs:
-  using: composite
-  steps:
-    - name: Setup conda caching
-      uses: actions/cache@v2
-      with:
-        path: ~/conda_pkgs_dir
-        key: conda-${{ inputs.type }}-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('ci/*') }}
-        restore-keys: |
-          conda-${{ inputs.type }}-${{ runner.os }}-${{ inputs.python-version}}
-          conda-${{ inputs.type }}-${{ runner.os }}
-          conda-${{ inputs.type }}-
 
-    - name: Set up Python ${{ inputs.python-version }}
-      uses: conda-incubator/setup-miniconda@v2
-      with:
-        miniforge-version: latest
-        miniforge-variant: mambaforge
-        python-version: ${{ inputs.python-version }}
-        channel-priority: strict
-        # channels: conda-forge/label/testing,conda-forge,anaconda
-        # show-channel-urls: true
-        activate-environment: devel
-        environment-file: environment.yml
-        # Needed for caching
-        use-only-tar-bz2: true
+  prefix:
+    description: 'cached file path'
+    required: true
 
-    # - name: Install
-    #   shell: bash -l {0}
-    #   run: |
-    #     mamba env create --file environment.yml
-    #     conda activate devel
-    #     mamba install -y -q -c anaconda python.app
-    #     which python.app
-    #     ls /usr/local/miniconda/python.app/Contents/Resources
-    #     # Check display dimensions using OS tools
-    #     system_profiler SPDisplaysDataType | grep Resolution
-    #     # Check display dimensions as seen by PySide
-    #     python ci/screen.py
-    #     pip install -e .
+# runs:
+#   using: composite
+steps:
+  - name: Set up Python ${{ inputs.python-version }}
+    uses: conda-incubator/setup-miniconda@v2
+    with:
+      miniforge-variant: mambaforge
+      miniforge-version: latest
+      python-version: ${{ inputs.python-version }}
+      activate-environment: devel
+      # environment-file: environment.yml
+      # Needed for caching
+      use-only-tar-bz2: true
+
+  - name: Setup conda caching
+    uses: actions/cache@v2
+    with:
+      path: ${{ matrix.prefix }}
+      key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+    id: cache
+
+  # If cache not found, create the environment
+  - name: Update environment
+    run: mamba env update -n devel -f environment.yml
+    if: steps.cache.outputs.cache-hit != 'true'
