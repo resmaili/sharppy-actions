@@ -1,4 +1,4 @@
-name: devel
+name: devel-win
 channels:
   - conda-forge
   - conda-forge/label/testing
@@ -13,7 +13,7 @@ dependencies:
   #- sphinx-gallery
   #Sphinx-Gallery removed because it requires matplotlib/pyqt and conflicts with pyside2's Qt version
   - requests
-  - python-dateutil 
+  - python-dateutil
   - pyinstaller
   - setuptools
   - certifi
