@@ -61,4 +61,3 @@ jobs:
     - name: Run test
       run: |
         conda activate devel
-        which python.app
