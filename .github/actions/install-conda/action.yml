@@ -1,11 +1,9 @@
 name: Install Conda
 inputs:
   python-version:
-    description: 'What version of Python to use'
     required: true
 
   prefix:
-    description: 'cached file path'
     required: true
 
 # runs:

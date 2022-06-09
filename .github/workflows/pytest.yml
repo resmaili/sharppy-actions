@@ -36,16 +36,19 @@ jobs:
           #   prefix: C:\Miniconda3\envs\my-env
 
 
-    name: ${{ matrix.label }}
+    name: ${{ matrix.label }} ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
-    steps:
-    # Checkout the repo onto vm
-    - name: Checkout source
-      uses: actions/checkout@v3
+    
+    runs:
+      using: "composite"
+      steps:
+      # Checkout the repo onto vm
+      - name: Checkout source
+        uses: actions/checkout@v3
 
-    # Call .action to install or use cached Python/env
-    - name: Install Conda
-      uses: ./.github/actions/install-conda
-      with:
-        python-version: ${{ matrix.python-version }}
-        prefix: ${{ matrix.prefix }}
+      # Call .action to install or use cached Python/env
+      - name: Install Conda
+        uses: ./.github/actions/install-conda
+        with:
+          python-version: ${{ matrix.python-version }}
+          prefix: ${{ matrix.prefix }}
