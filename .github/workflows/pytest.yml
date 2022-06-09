@@ -36,7 +36,7 @@ jobs:
           #   prefix: C:\Miniconda3\envs\my-env
 
 
-    name: ${{ matrix.label }} ${{ matrix.python-version }}
+    name: ${{ matrix.label }} x Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
 
     steps:
