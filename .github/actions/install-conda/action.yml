@@ -1,4 +1,8 @@
 name: Install Conda
+defaults:
+  run:
+    shell: bash -l {0}
+    
 inputs:
   python-version:
     required: true
