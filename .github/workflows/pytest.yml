@@ -58,7 +58,7 @@ jobs:
         key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
       id: cache
 
-    - name: Run test
+    - name: Run pytest
       run: |
         conda activate devel
-        system_profiler SPDisplaysDataType | grep Resolution
+        pytest -v --junitxml=junit/test-results.xml
