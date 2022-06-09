@@ -6,28 +6,28 @@ inputs:
   prefix:
     required: true
 
-# runs:
-#   using: composite
-steps:
-  - name: Set up Python ${{ inputs.python-version }}
-    uses: conda-incubator/setup-miniconda@v2
-    with:
-      miniforge-variant: mambaforge
-      miniforge-version: latest
-      python-version: ${{ inputs.python-version }}
-      activate-environment: devel
-      # environment-file: environment.yml
-      # Needed for caching
-      use-only-tar-bz2: true
+runs:
+  using: composite
+  steps:
+    - name: Set up Python ${{ inputs.python-version }}
+      uses: conda-incubator/setup-miniconda@v2
+      with:
+        miniforge-variant: mambaforge
+        miniforge-version: latest
+        python-version: ${{ inputs.python-version }}
+        activate-environment: devel
+        # environment-file: environment.yml
+        # Needed for caching
+        use-only-tar-bz2: true
 
-  - name: Setup conda caching
-    uses: actions/cache@v2
-    with:
-      path: ${{ matrix.prefix }}
-      key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-    id: cache
+    - name: Setup conda caching
+      uses: actions/cache@v2
+      with:
+        path: ${{ matrix.prefix }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+      id: cache
 
-  # If cache not found, create the environment
-  - name: Update environment
-    run: mamba env update -n devel -f environment.yml
-    if: steps.cache.outputs.cache-hit != 'true'
+    # If cache not found, create the environment
+    - name: Update environment
+      run: mamba env update -n devel -f environment.yml
+      if: steps.cache.outputs.cache-hit != 'true'
