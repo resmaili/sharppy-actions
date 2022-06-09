@@ -20,7 +20,7 @@ jobs:
 
     # Control the os/python builds
     strategy:
-      prefix: [/usr/share/miniconda3/envs/my-env]
+      prefix: /usr/share/miniconda3/envs/my-env
       matrix:
         python-version: [3.8]
         include:
