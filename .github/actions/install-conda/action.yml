@@ -10,15 +10,15 @@ inputs:
 runs:
   using: composite
   steps:
-    # - name: Setup conda caching
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: ~/conda_pkgs_dir
-    #     key: conda-${{ inputs.type }}-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('ci/*') }}
-    #     restore-keys: |
-    #       conda-${{ inputs.type }}-${{ runner.os }}-${{ inputs.python-version}}
-    #       conda-${{ inputs.type }}-${{ runner.os }}
-    #       conda-${{ inputs.type }}-
+    - name: Setup conda caching
+      uses: actions/cache@v2
+      with:
+        path: ~/conda_pkgs_dir
+        key: conda-${{ inputs.type }}-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('ci/*') }}
+        restore-keys: |
+          conda-${{ inputs.type }}-${{ runner.os }}-${{ inputs.python-version}}
+          conda-${{ inputs.type }}-${{ runner.os }}
+          conda-${{ inputs.type }}-
 
     - name: Set up Python ${{ inputs.python-version }}
       uses: conda-incubator/setup-miniconda@v2
@@ -30,7 +30,7 @@ runs:
         channels: conda-forge/label/testing,conda-forge
         show-channel-urls: true
         # Needed for caching
-        # use-only-tar-bz2: true
+        use-only-tar-bz2: true
 
     - name: Install
       shell: bash -l {0}
