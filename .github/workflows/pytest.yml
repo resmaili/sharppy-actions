@@ -44,16 +44,22 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v3
 
+    - name: Setup conda env caching
+      uses: actions/cache@v2
+      with:
+        path: ${{ matrix.prefix }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+      id: cache
+
     # Call .action to install or use cached Python/env
     - name: Install Conda
+      if: steps.cache.outputs.cache-hit != 'true'
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
         prefix: ${{ matrix.prefix }}
 
     - name: Run pytest
-      with:
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
       run: |
         conda activate devel
         pyinstaller SHARPpy-osx.spec --noconsole --onefile --log-level DEBUG
