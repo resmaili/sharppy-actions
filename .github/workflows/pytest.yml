@@ -51,9 +51,14 @@ jobs:
         python-version: ${{ matrix.python-version }}
         prefix: ${{ matrix.prefix }}
 
-    - name: Run cached environment
+    - name: Load cached environment
       uses: actions/cache@v2
       with:
         path: ${{ matrix.prefix }}
         key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-      run: which python.app
+      id: cache
+
+    - name: Run test
+      run: |
+        conda activate devel
+        which python.app
