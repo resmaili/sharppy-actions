@@ -1,4 +1,4 @@
-name: 'Install Using Conda'
+name: 'Install from Conda'
 description: 'Setup environment and install using a Conda-based toolchain'
 inputs:
   type:
@@ -27,15 +27,23 @@ runs:
         miniforge-variant: mambaforge
         python-version: ${{ inputs.python-version }}
         channel-priority: strict
-        channels: conda-forge/label/testing,conda-forge
-        show-channel-urls: true
+        # channels: conda-forge/label/testing,conda-forge,anaconda
+        # show-channel-urls: true
+        activate-environment: devel
+        environment-file: environment.yml
         # Needed for caching
         use-only-tar-bz2: true
 
-    - name: Install
-      shell: bash -l {0}
-      run: |
-        mamba env create --file environment.yml
-        conda activate devel
-        mamba install -y -q -c anaconda python.app
-        which python.app
+    # - name: Install
+    #   shell: bash -l {0}
+    #   run: |
+    #     mamba env create --file environment.yml
+    #     conda activate devel
+    #     mamba install -y -q -c anaconda python.app
+    #     which python.app
+    #     ls /usr/local/miniconda/python.app/Contents/Resources
+    #     # Check display dimensions using OS tools
+    #     system_profiler SPDisplaysDataType | grep Resolution
+    #     # Check display dimensions as seen by PySide
+    #     python ci/screen.py
+    #     pip install -e .
