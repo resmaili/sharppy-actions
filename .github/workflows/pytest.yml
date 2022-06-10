@@ -35,7 +35,6 @@ jobs:
           #   label: win-64
           #   path: C:\Miniconda3\envs\my-env
 
-
     name: ${{ matrix.label }} x Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
 
