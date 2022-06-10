@@ -27,8 +27,7 @@ runs:
 
       # If cache not found, install python
     - name: Set up Python ${{ inputs.python-version }}
-      if: steps.cache.outputs.cache-hit != 'true'
-      if: ${{ inputs.force-install }} == 'true'
+      if: steps.cache.outputs.cache-hit != 'true' && ${{ inputs.force-install }} == 'true'
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniforge-variant: mambaforge
