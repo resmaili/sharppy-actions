@@ -25,45 +25,37 @@ jobs:
         include:
           # - os: ubuntu-latest
           #   label: linux-64
-          #   prefix: /usr/share/miniconda3/envs/my-env
+          #   path: /usr/share/miniconda3/envs/my-env
 
           - os: macos-latest
             label: osx-64
-            prefix: /Users/runner/miniconda3/envs/my-env
+            path: /Users/runner/miniconda3/envs/my-env
           #
           # - os: windows-latest
           #   label: win-64
-          #   prefix: C:\Miniconda3\envs\my-env
+          #   path: C:\Miniconda3\envs\my-env
 
 
     name: ${{ matrix.label }} x Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
 
     steps:
-    # Checkout the repo onto vm
     - name: Checkout source
+      description: Checks out the repo onto vm
       uses: actions/checkout@v3
 
-    # Load cache, if available
-    - name: Setup conda env caching
-      uses: actions/cache@v2
-      with:
-        path: ${{ matrix.prefix }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-      id: cache
-
-    # Call .action to install or use cached Python/env
-    - name: Install Conda
+    - name: Install conda and environment
+      description: Installs environment cache not found
       if: steps.cache.outputs.cache-hit != 'true'
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
-        prefix: ${{ matrix.prefix }}
+        path: ${{ matrix.path }}
+        force-install: false
 
-    - name: Run pytest
-      shell: bash -l {0}
-      run: |
-        conda init bash
-        conda activate devel
-        pyinstaller SHARPpy-osx.spec --noconsole --onefile --log-level DEBUG
-        # python -m pytest -v --junitxml=junit/test-results.xml
+    # - name: Run sharppy build
+    #   shell: bash -l {0}
+    #   uses: ./.github/actions/run-build
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
+    #     oslabel: ${{ matrix.label }}

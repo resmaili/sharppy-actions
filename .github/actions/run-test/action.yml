@@ -1,0 +1,34 @@
+name: 'Run Tests'
+
+runs:
+  using: composite
+  steps:
+    - name: Set test data directory
+      shell: bash
+      run: echo "TEST_DATA_DIR=$GITHUB_WORKSPACE/staticdata" >> $GITHUB_ENV
+
+    - name: Run tests
+      id: run-tests
+      # Need to use a login bash shell to get the conda env
+      shell: bash -l {0}
+      # By running coverage in "parallel" mode and "combining", we can clean up the path names
+      # run: |
+      #   set -e -o pipefail
+      #   python -m coverage run -p -m pytest --mpl -W error::metpy.deprecation.MetpyDeprecationWarning tests/ 2>&1 | tee tests-${{ inputs.key }}.log
+      #   python -m coverage combine
+      #   python -m coverage report
+      #   python -m coverage xml
+
+      run: |
+          conda activate devel
+          # Check display dimensions as seen by PySide
+          python ci/screen.py
+          sudo pytest -v --junitxml=junit/test-results.xml
+          sudo mv examples/data/14061619.png examples/data/14061619_mac.png
+
+    - name: Upload test images
+      if: failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.key }}-images
+        path: test_output/

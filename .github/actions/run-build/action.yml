@@ -1,0 +1,29 @@
+name: Run Build
+defaults:
+  run:
+    shell: bash -l {0}
+
+inputs:
+  python-version:
+    required: true
+
+  oslabel:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Check cache
+      description: Look for os-specific cached environment
+      uses: actions/cache@v2
+      with:
+        path: ${{ matrix.prefix }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+      id: cache
+
+    - name: build ${{ inputs.os}} x ${{ inputs.python-version}}
+      if: ${{ inputs.oslabel}} == 'osx-64'
+      shell: bash -l {0}
+      run: |
+        conda activate devel
+        pyinstaller SHARPpy-osx.spec --noconsole --onefile --log-level DEBUG
