@@ -20,15 +20,15 @@ runs:
 
     - name: Load cache
       # description: Look for os-specific cached environment
-      uses: actions/cache@v3
-      with:
-        path: ${{ inputs.path }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
+      # uses: actions/cache@v3
+      # with:
+      #   path: ${{ env.pythonLocation }}
+      #   key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
 
     - name: build ${{ runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'macOS')
       shell: bash -l {0}
       run: |
-        conda activate devel
+        # conda activate devel
         cd runsharp
         pyinstaller SHARPpy-osx.spec --log-level DEBUG

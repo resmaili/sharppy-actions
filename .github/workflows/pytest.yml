@@ -48,8 +48,8 @@ jobs:
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
-        path: ${{ matrix.path }}
-        force-install: false
+        # path: ${{ matrix.path }}
+        # force-install: false
 
     - name: Run sharppy build
       uses: ./.github/actions/run-build
