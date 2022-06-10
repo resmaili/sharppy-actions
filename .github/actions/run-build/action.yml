@@ -16,13 +16,12 @@ runs:
         echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
       shell: bash
 
-    - name: Check cache
+    - name: Load cache
       # description: Look for os-specific cached environment
       uses: actions/cache@v3
       with:
         path: ${{ matrix.prefix }}
         key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
-      id: cache
 
     - name: build ${{ runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'macOS')
