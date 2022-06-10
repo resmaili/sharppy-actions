@@ -18,21 +18,19 @@ runs:
   using: composite
   steps:
     - name: Get Date
-      id: get-date
-      run: |
-        echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
-      shell: bash
+      - name: Set cache date
+        run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
 
     - name: Load conda env cache
       uses: actions/cache@v3
       with:
         path: ${{ inputs.path }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
       id: cache
 
       # If cache not found, install python
     - name: Set up Python ${{ inputs.python-version }}
-      if: steps.cache.outputs.cache-hit == 'false' || ${{ inputs.force-install }} == 'true'
+      if: steps.cache.outputs.cache-hit == 'false'
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniforge-variant: mambaforge

@@ -31,4 +31,4 @@ runs:
       run: |
         conda activate devel
         cd runsharp
-        pyinstaller SHARPpy-osx.spec --noconsole --onefile --log-level DEBUG
+        pyinstaller SHARPpy-osx.spec --log-level DEBUG
