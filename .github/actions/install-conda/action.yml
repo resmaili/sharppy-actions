@@ -50,4 +50,3 @@ runs:
       with:
         path: ${{ matrix.path }}
         key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-      id: cache
