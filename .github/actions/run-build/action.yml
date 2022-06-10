@@ -7,22 +7,25 @@ inputs:
   python-version:
     required: true
 
-  oslabel:
-    required: true
-
 runs:
   using: composite
   steps:
+    - name: Get Date
+      id: get-date
+      run: |
+        echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+      shell: bash
+
     - name: Check cache
-      description: Look for os-specific cached environment
-      uses: actions/cache@v2
+      # description: Look for os-specific cached environment
+      uses: actions/cache@v3
       with:
         path: ${{ matrix.prefix }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
       id: cache
 
-    - name: build ${{ inputs.os}} x ${{ inputs.python-version}}
-      if: ${{ inputs.oslabel}} == 'osx-64'
+    - name: build ${{ runner.os}} x ${{ inputs.python-version}}
+      if: startsWith(runner.os, 'macOS')
       shell: bash -l {0}
       run: |
         conda activate devel

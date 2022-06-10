@@ -7,10 +7,10 @@ dependencies:
   - python=3
   - numpy>=1.15
   - pyside2>=5.12
-  - sphinx
+  # - sphinx
   - pytest
   - qtpy
-  - sphinx_rtd_theme
+  # - sphinx_rtd_theme
   - python.app
   - requests
   - python-dateutil

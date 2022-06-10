@@ -17,17 +17,22 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Get Date
+      id: get-date
+      run: |
+        echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
+      shell: bash
 
-    - name: Setup conda env caching
-      uses: actions/cache@v2
+    - name: Load conda env cache
+      uses: actions/cache@v3
       with:
         path: ${{ matrix.path }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
       id: cache
 
       # If cache not found, install python
     - name: Set up Python ${{ inputs.python-version }}
-      if: steps.cache.outputs.cache-hit != 'true' && ${{ inputs.force-install }} == 'true'
+      if: steps.cache.outputs.cache-hit == 'false' || ${{ inputs.force-install }} == 'true'
       uses: conda-incubator/setup-miniconda@v2
       with:
         miniforge-variant: mambaforge
@@ -39,13 +44,13 @@ runs:
 
     # If cache not found, create the environment
     - name: Update environment
-      if: steps.cache.outputs.cache-hit != 'true'
+      if: steps.cache.outputs.cache-hit == 'false' || ${{ inputs.force-install }} == 'true'
       shell: bash -l {0}
       run: mamba env update -n devel -f environment.yml
 
     # Save cache
-    - name: Setup conda env caching
-      uses: actions/cache@v2
+    - name: Save conda env to cache
+      uses: actions/cache@v3
       with:
         path: ${{ matrix.path }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}

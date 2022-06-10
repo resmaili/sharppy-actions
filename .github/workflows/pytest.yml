@@ -46,7 +46,6 @@ jobs:
 
       # Installs environment cache not found
     - name: Install conda and environment
-      if: steps.cache.outputs.cache-hit != 'true'
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
@@ -58,4 +57,3 @@ jobs:
     #   uses: ./.github/actions/run-build
     #   with:
     #     python-version: ${{ matrix.python-version }}
-    #     oslabel: ${{ matrix.label }}
