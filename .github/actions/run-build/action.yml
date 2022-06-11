@@ -6,29 +6,28 @@ defaults:
 inputs:
   python-version:
     required: true
-  path:
-    required: true
+
 
 runs:
   using: composite
   steps:
-    - name: Get Date
-      id: get-date
-      run: |
-        echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
-      shell: bash
-
-    - name: Load cache
-      # description: Look for os-specific cached environment
-      # uses: actions/cache@v3
-      # with:
-      #   path: ${{ env.pythonLocation }}
-      #   key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}-${{ steps.get-date.outputs.date }}
+    # - name: Load cache
+    #   description: Look for os-specific cached environment
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: ${{ env.pythonLocation }}
+    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
 
     - name: build ${{ runner.os}} x ${{ inputs.python-version}}
-      if: startsWith(runner.os, 'macOS')
+      if: startsWith(runner.os, 'Windows')
       shell: bash -l {0}
       run: |
-        # conda activate devel
+        conda activate devel
+        python ci/screen.py
+        python -c "import ssl; print(ssl.__file__)"
+
+        pip install -e .
+        pytest -v --junitxml=junit/test-results.xml
+
         cd runsharp
-        pyinstaller SHARPpy-osx.spec --log-level DEBUG
+        pyinstaller SHARPpy-win7-64.spec --log-level DEBUG

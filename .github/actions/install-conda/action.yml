@@ -29,9 +29,13 @@ runs:
         miniforge-variant: mambaforge
         miniforge-version: latest
         python-version: ${{ inputs.python-version }}
-        activate-environment: base
-        # environment-file: environment.yml
+        activate-environment: devel
+        environment-file: environment.yml
         use-only-tar-bz2: true
+
+    - name: Install requirements
+      shell: bash -l {0}
+      run: mamba env update -n devel -f environment.yml
 
     - name: Cache
       uses: actions/cache@v3
@@ -41,6 +45,6 @@ runs:
       id: cache
 
     # If cache not found, create the environment
-    - name: Install requirements
-      shell: bash -l {0}
-      run: mamba env update -n base -f environment.yml
+    # - name: Install requirements
+    #   shell: bash -l {0}
+    #   run: mamba env update -n devel -f environment.yml
