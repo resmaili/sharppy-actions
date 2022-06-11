@@ -19,7 +19,7 @@ runs:
     #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
 
     - name: build ${{ runner.os}} x ${{ inputs.python-version}}
-      if: startsWith(runner.os, 'Windows')
+      if: startsWith(runner.os, 'win')
       shell: bash -l {0}
       run: |
         conda activate devel
