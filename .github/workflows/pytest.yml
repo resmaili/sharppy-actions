@@ -39,13 +39,13 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      # Checks out the repo onto vm
-    # - name: Checkout cache
-    #   uses: actions/cache@v3
-    #   with:
-    #     path: ${{ env.pythonLocation }}
-    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-    #   id: cache
+      Checks out the repo onto vm
+    - name: Checkout cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.pythonLocation }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+      id: cache
 
       # Installs environment cache not found
     - name: Install conda and environment

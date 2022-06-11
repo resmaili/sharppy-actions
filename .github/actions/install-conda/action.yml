@@ -37,12 +37,12 @@ runs:
       shell: bash -l {0}
       run: mamba env update -n devel -f environment.yml
 
-    - name: Cache
-      uses: actions/cache@v3
-      with:
-        path: ${{ env.pythonLocation }}
-        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-      id: cache
+    # - name: Cache
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: ${{ env.pythonLocation }}
+    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+    #   id: cache
 
     # If cache not found, create the environment
     # - name: Install requirements
