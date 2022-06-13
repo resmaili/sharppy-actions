@@ -51,7 +51,8 @@ jobs:
     - name: Checkout cache
       uses: actions/cache@v3
       with:
-        path: ${{ env.pythonLocation }}
+        path: ${{ matrix.path }}
+        # path: ${{ env.pythonLocation }}
         key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
       id: cache
 
