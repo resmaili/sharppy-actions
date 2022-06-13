@@ -39,25 +39,29 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    # - name: Checkout cache
-    #   uses: actions/cache@v3
-    #   with:
-    #     path: ${{ env.pythonLocation }}
-    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
-    #   id: cache
+    # - name: Get Date
+    #   - name: Set cache date
+    #     run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
 
     - name: Checkout source
       uses: actions/checkout@v3
       with:
         fetch-depth: 100
 
+    - name: Checkout cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ env.pythonLocation }}
+        key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
+      id: cache
+
       # Installs environment cache not found
-    - name: Install conda and environment
+    - if: ${{ steps.cache.outputs.cache-hit == 'false' }}
+      name: Install conda and environment
+      if: startsWith(runner.os, 'mac')
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
-        # path: ${{ matrix.path }}
-        # force-install: false
 
     - name: Run sharppy build
       uses: ./.github/actions/run-build

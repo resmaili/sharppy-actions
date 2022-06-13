@@ -11,12 +11,6 @@ inputs:
 runs:
   using: composite
   steps:
-    # - name: Load cache
-    #   description: Look for os-specific cached environment
-    #   uses: actions/cache@v3
-    #   with:
-    #     path: ${{ env.pythonLocation }}
-    #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
 
     - name: build ${{ runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'win')
@@ -27,7 +21,7 @@ runs:
         python -c "import ssl; print(ssl.__file__)"
 
         pip install -e .
-        pytest -v --junitxml=junit/test-results.xml
+        pytest -v --capture=sys
 
         cd runsharp
         pyinstaller SHARPpy-win7-64.spec --log-level DEBUG
