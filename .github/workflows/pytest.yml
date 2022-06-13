@@ -58,7 +58,6 @@ jobs:
       # Installs environment cache not found
     - if: ${{ steps.cache.outputs.cache-hit == 'false' }}
       name: Install conda and environment
-      if: startsWith(runner.os, 'mac')
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
