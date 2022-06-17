@@ -16,11 +16,14 @@ runs:
       shell: bash -l {0}
       run: |
         conda activate devel
-        python ci/screen.py
-        python -c "import ssl; print(ssl.__file__)"
+        pip install -e .
+        pytest -v --junitxml=test-results.xml
 
-        # pip install -e .
-        # pytest -v --capture=sys
-        #
         # cd runsharp
         # pyinstaller SHARPpy-win7-64.spec --log-level DEBUG
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: "test-results.xml"
