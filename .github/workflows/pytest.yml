@@ -25,15 +25,15 @@ jobs:
         include:
           # - os: ubuntu-latest
           #   label: linux-64
-          #   path: /usr/share/miniconda3/envs/my-env
+          #   path: /usr/share/miniconda3/envs/devel
 
           # - os: macos-latest
           #   label: osx-64
-          #   path: /Users/runner/miniconda3/envs/my-env
+          #   path: /Users/runner/miniconda3/envs/devel
           #
           - os: windows-latest
             label: win-64
-            path: C:\Miniconda3\envs\my-env
+            path: C:\Miniconda3\envs\devel
 
     name: ${{ matrix.label }} x Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
@@ -51,7 +51,7 @@ jobs:
     - name: Checkout cache
       uses: actions/cache@v3
       with:
-        path: ${{ matrix.path }}
+        path: ~/conda_pkgs_dir
         # path: ${{ env.pythonLocation }}
         key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
       id: cache
