@@ -57,14 +57,13 @@ jobs:
       id: cache
 
       # Installs environment cache not found
-    - if: ${{ steps.cache.outputs.cache-hit == 'false' }}
-      name: Install conda and environment
+    - name: Install conda and environment
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
+      if: ${{ steps.cache.outputs.cache-hit == 'false' }}
 
-    - name: Run sharppy build
-      uses: ./.github/actions/run-build
-      with:
-        python-version: ${{ matrix.python-version }}
-        path: ${{ matrix.path }}
+    # - name: Run sharppy build
+    #   uses: ./.github/actions/run-build
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
