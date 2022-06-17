@@ -11,7 +11,7 @@ except ImportError:
     from urllib.error import URLError
     from urllib.parse import quote, urlparse, urlunsplit
 
-import certifi 
+import certifi
 import platform, subprocess, re
 import imp
 import socket
@@ -43,11 +43,11 @@ class DataSourceError(Exception):
 
 def loadDataSources(ds_dir=HOME_DIR):
     """
-    Load the data source information from the XML files. 
+    Load the data source information from the XML files.
     Returns a dictionary associating data source names to DataSource objects.
     """
     files = glob.glob(os.path.join(ds_dir, '*.xml'))
-    if len(files) == 0:     
+    if len(files) == 0:
         if frozenutils.isFrozen():
             frozen_path = frozenutils.frozenPath()
             files = glob.glob(os.path.join(frozen_path, 'sharppy', 'datasources', '*.xml')) +  \
@@ -86,7 +86,7 @@ def _pingURL(hostname, timeout=1):
 
 def pingURLs(ds_dict):
     """
-    Try to ping all the URLs in any XML file. 
+    Try to ping all the URLs in any XML file.
     Takes a dictionary associating data source names to DataSource objects.
     Returns a dictionary associating URLs with a boolean specifying whether or not they were reachable.
     """
@@ -110,7 +110,7 @@ def pingURLs(ds_dict):
 
 class Outlet(object):
     """
-    An Outlet object contains all the information for a data outlet (for example, the observed 
+    An Outlet object contains all the information for a data outlet (for example, the observed
     sounding feed from SPC, which is distinct from the observed sounding feed from, say, Europe).
     """
     def __init__(self, ds_name, config):
@@ -148,12 +148,12 @@ class Outlet(object):
             s = datetime.utcnow()
         else:
             s = datetime.strptime(start, '%Y/%m/%d')
- 
+
         if end == "-" or end is None:
             e = None
         elif end == 'now':
-            e = datetime.utcnow() 
-        else:   
+            e = datetime.utcnow()
+        else:
             e = datetime.strptime(end, '%Y/%m/%d')
         return [s, e]
 
@@ -222,7 +222,7 @@ class Outlet(object):
         time_counter = daily_cycles.index(start.hour)
         archive_len = self.getArchiveLen()
         # TODO: Potentially include the option to specify the beginning date of the archive, if the data source
-        # is static? 
+        # is static?
 
         cycles = []
         cur_time = start
@@ -265,7 +265,7 @@ class Outlet(object):
                 self._is_available = True
 
             except URLError as err:
-                logging.exception(err) 
+                logging.exception(err)
                 stns_avail = []
                 self._is_available = False
         logging.debug("_is_available: "+ str(self._is_available))
@@ -289,11 +289,11 @@ class Outlet(object):
                 if len(times) == 1:
                     times = self.getArchivedCycles(start=times[0], max_cycles=max_cycles)
                 self._is_available = True
-            except URLError as err:
+            except (URLError, HTTPError) as err:
                 logging.exception(err)
                 custom_failed = True
                 self._is_available = False
-     
+
         if not self._custom_avail or custom_failed:
             times = self.getArchivedCycles(max_cycles=max_cycles)
         logging.debug("outlet.getAvailableTimes() times Found:" + str(times[~max_cycles:]))

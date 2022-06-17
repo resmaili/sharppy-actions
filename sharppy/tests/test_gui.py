@@ -18,13 +18,13 @@ prof_coll = dec.getProfiles()
 prof = prof_coll.getCurrentProfs()['']
 
 if QtWidgets.QApplication.instance() is None:
-    app = QtWidgets.QApplication([])    
+    app = QtWidgets.QApplication([])
 else:
     app = QtWidgets.QApplication.instance()
 
 #@pytest.mark.skipif(True, reason="DISPLAY not set")
-#@pytest.mark.skipif(True)
-@pytest.mark.skipif("DISPLAY_AVAIL" in os.environ and os.environ["DISPLAY_AVAIL"] == 'NO', reason="DISPLAY not set")
+@pytest.mark.skipif(True)
+# @pytest.mark.skipif("DISPLAY_AVAIL" in os.environ and os.environ["DISPLAY_AVAIL"] == 'NO', reason="DISPLAY not set")
 def test_insets():
     insets = [viz.fire.plotFire,
               viz.winter.plotWinter,
@@ -50,7 +50,8 @@ def test_insets():
     ens.addProfileCollection(prof_coll)
     ens.setActiveCollection(0)
 
-@pytest.mark.skipif("DISPLAY_AVAIL" in os.environ and os.environ["DISPLAY_AVAIL"] == 'NO', reason="DISPLAY not set")
+# @pytest.mark.skipif("DISPLAY_AVAIL" in os.environ and os.environ["DISPLAY_AVAIL"] == 'NO', reason="DISPLAY not set")
+@pytest.mark.skipif(True)
 def test_hodo():
     hodo = viz.hodo.plotHodo
 
@@ -105,4 +106,4 @@ def test_mapper():
         mapper.getCoordPaths()
 
 app.quit()
-del app 
+del app
