@@ -61,7 +61,7 @@ jobs:
       uses: ./.github/actions/install-conda
       with:
         python-version: ${{ matrix.python-version }}
-      if: ${{ steps.cache.outputs.cache-hit == 'false' }}
+      if: ${{ steps.cache.outputs.cache-hit != 'true' }}
 
     # - name: Run sharppy build
     #   uses: ./.github/actions/run-build
