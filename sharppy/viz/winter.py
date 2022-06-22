@@ -285,7 +285,7 @@ class plotWinter(backgroundWinter):
         qp.drawText(rect1, QtCore.Qt.TextDontClip | QtCore.Qt.AlignCenter, self.precip_type)
 
     def drawPrecipTypeTemp(self, qp):
-        small = QtGui.QFont('Helvetica', round(self.hgt * self.font_ratio) 0-1)
+        small = QtGui.QFont('Helvetica', round(self.hgt * self.font_ratio)-1)
         small_metrics = QtGui.QFontMetrics( small )
         height = small_metrics.xHeight() + self.tpad
         pen = QtGui.QPen(self.fg_color, 2, QtCore.Qt.SolidLine)
