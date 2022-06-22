@@ -11,31 +11,57 @@ runs:
   using: composite
   steps:
 
-    - name: build ${{ runner.os}} x ${{ inputs.python-version}}
+    # Windows steps
+    # - name: Pytest ${{ runner.os}} x ${{ inputs.python-version}}
+    #   if: startsWith(runner.os, 'win')
+    #   shell: bash -l {0}
+    #   run: |
+    #     conda activate devel
+    #     pip install -e .
+    #     pytest -v --junitxml=test-results.xml --color=yes
+    #     # mv examples\\data\\14061619.png examples\\data\\14061619_win.png
+    #
+    # - name: Publish Test Results
+    #   uses: EnricoMi/publish-unit-test-result-action/composite@v1
+    #   if: startsWith(runner.os, 'win')
+    #   with:
+    #     files: "test-results.xml"
+
+    - name: Build ${{ runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'win')
       shell: bash -l {0}
       run: |
-        conda activate devel
-        pip install -e .
-        pytest -v --junitxml=test-results.xml --color=yes
-
         cd runsharp
         pyinstaller SHARPpy-win7-64.spec --log-level DEBUG
+        cd ..
 
-    - name: Publish Test Results
-      uses: EnricoMi/publish-unit-test-result-action/composite@v1
+    # - uses: actions/upload-artifact@v3
+    #   if: startsWith(runner.os, 'win')
+    #   with:
+    #     name:
+    #     path: |
+    #     runsharp/dist/
+    #     runsharp/dist/
+
+    - name: Archive ${{ runner.os}} release
+      uses: thedoctor0/zip-release@main
       if: startsWith(runner.os, 'win')
       with:
-        files: "test-results.xml"
+        type: 'zip'
+        filename: 'SHARPpy-win-64.zip'
+        path: runsharp/dist/SHARPpy.exe
+
+    - name: Upload ${{ runner.os}} release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "SHARPpy-win-64.zip"
+        allowUpdates: true
+        tag: 'testing release'
+        commit: 'master'
+        # token: ${{ secrets.GITHUB_TOKEN }}
 
     # - name: Publish Test Results
     #     uses: EnricoMi/publish-unit-test-result-action@v1
     #     if: startsWith(runner.os, 'lin') || startsWith(runner.os, 'mac')
     #     with:
     #       files: "test-results.xml"
-
-    # - uses: actions/upload-artifact@v3
-    #   if: startsWith(runner.os, 'win')
-    #   with:
-    #     name: SHARPpy.exe
-    #     path: runsharp/dist/ # or path/to/artifact
