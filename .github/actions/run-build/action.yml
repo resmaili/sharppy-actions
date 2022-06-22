@@ -11,21 +11,21 @@ runs:
   using: composite
   steps:
 
-    # Windows steps
-    # - name: Pytest ${{ runner.os}} x ${{ inputs.python-version}}
-    #   if: startsWith(runner.os, 'win')
-    #   shell: bash -l {0}
-    #   run: |
-    #     conda activate devel
-    #     pip install -e .
-    #     pytest -v --junitxml=test-results.xml --color=yes
-    #     # mv examples\\data\\14061619.png examples\\data\\14061619_win.png
-    #
-    # - name: Publish Test Results
-    #   uses: EnricoMi/publish-unit-test-result-action/composite@v1
-    #   if: startsWith(runner.os, 'win')
-    #   with:
-    #     files: "test-results.xml"
+    Windows steps
+    - name: Pytest ${{ runner.os}} x ${{ inputs.python-version}}
+      if: startsWith(runner.os, 'win')
+      shell: bash -l {0}
+      run: |
+        conda activate devel
+        pip install -e .
+        pytest -v --junitxml=test-results.xml --color=yes
+        # mv examples\\data\\14061619.png examples\\data\\14061619_win.png
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action/composite@v1
+      if: startsWith(runner.os, 'win')
+      with:
+        files: "test-results.xml"
 
     - name: Build ${{ runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'win')
@@ -56,7 +56,7 @@ runs:
       with:
         artifacts: "SHARPpy-win-64.zip"
         allowUpdates: true
-        tag: 'testing release'
+        tag: 'v.0.0.0'
         commit: 'master'
         # token: ${{ secrets.GITHUB_TOKEN }}
 
