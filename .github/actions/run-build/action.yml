@@ -11,7 +11,7 @@ runs:
   using: composite
   steps:
 
-    Windows steps
+#    Windows steps
     - name: Pytest ${{ runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'win')
       shell: bash -l {0}
