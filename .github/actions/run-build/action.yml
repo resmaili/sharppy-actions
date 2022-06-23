@@ -52,11 +52,11 @@ runs:
         path: runsharp/dist/SHARPpy.exe
 
     - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump: 'minor'
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        default_bump: 'minor'
 
     - name: Create ${{ runner.os}} release
       uses: ncipollo/release-action@v1

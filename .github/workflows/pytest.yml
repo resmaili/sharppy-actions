@@ -49,6 +49,13 @@ jobs:
       with:
         fetch-depth: 100
 
+    - name: Bump version and push tag
+      id: tag_version
+      uses: mathieudutour/github-tag-action@v6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        default_bump: 'minor'
+
     - name: Checkout cache
       uses: actions/cache@v3
       with:
@@ -58,13 +65,13 @@ jobs:
       id: cache
 
       # Installs environment cache not found
-    - name: Install conda and environment
-      uses: ./.github/actions/install-conda
-      with:
-        python-version: ${{ matrix.python-version }}
-      # if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-
-    - name: Run sharppy build
-      uses: ./.github/actions/run-build
-      with:
-        python-version: ${{ matrix.python-version }}
+    # - name: Install conda and environment
+    #   uses: ./.github/actions/install-conda
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
+    #   # if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+    #
+    # - name: Run sharppy build
+    #   uses: ./.github/actions/run-build
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
