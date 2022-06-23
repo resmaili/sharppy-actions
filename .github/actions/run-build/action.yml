@@ -6,6 +6,8 @@ defaults:
 inputs:
   python-version:
     required: true
+  repo-token:
+    required: true
 
 runs:
   using: composite
@@ -55,7 +57,7 @@ runs:
       id: tag_version
       uses: mathieudutour/github-tag-action@v6.0
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.repo-token }}
         default_bump: 'minor'
 
     - name: Create ${{ runner.os}} release

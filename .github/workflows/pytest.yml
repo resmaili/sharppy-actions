@@ -68,3 +68,4 @@ jobs:
       uses: ./.github/actions/run-build
       with:
         python-version: ${{ matrix.python-version }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
