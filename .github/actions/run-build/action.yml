@@ -36,7 +36,7 @@ runs:
     - name: Build for ${{runner.os}}
       shell: bash -l {0}
       run: |
-      cd runsharp
+        cd runsharp
         OS=${{runner.os}}
         echo ${OS:0:3}
         if [[ "${OS:0:3}" == "mac" ]]; then
