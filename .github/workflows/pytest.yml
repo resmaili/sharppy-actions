@@ -17,7 +17,7 @@ jobs:
     # Control the os/python builds
     strategy:
       matrix:
-        python-version: 3.8
+        python-version: [3.8]
         os: macos-latest
         # include:
           # - os: [macos-latest, ubuntu-latest, windows-latest]
