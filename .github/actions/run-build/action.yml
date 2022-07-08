@@ -21,7 +21,7 @@ runs:
         conda activate devel
         pip install -e .
         pytest -v --junitxml=test-results-_${{ runner.os }}.xml --color=yes
-        mv examples/data/14061619.png examples/data/14061619_${{ runner.os }}.png
+        # mv examples/data/14061619.png examples/data/14061619_${{ runner.os }}.png
 
     - name: Publish Test Results Win
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
