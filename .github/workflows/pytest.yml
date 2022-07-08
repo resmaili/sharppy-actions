@@ -8,10 +8,6 @@ on:
   # schedule:
   #   - cron: '0 0 * * *'
 
-# concurrency:
-#   group: ${{ github.workflow}}-${{ github.head_ref }}
-#   cancel-in-progress: true
-
 jobs:
   build:
     defaults:
@@ -23,32 +19,12 @@ jobs:
       matrix:
         python-version: [3.8]
         include:
-          - os: [macos-latest, windows-latest, ubuntu-latest]
-          # - os: ubuntu-latest
-          #   label: linux-64
-          #   path: /usr/share/miniconda3/envs/devel
-          #
-          # - os: macos-latest
-          #   label: osx-64
-          #   path: /Users/runner/miniconda3/envs/devel
-          #
-          # - os: windows-latest
-          #   label: win-64
-          #   path: C:\Miniconda3\envs\devel
+          - os: [macos-latest, ubuntu-latest, windows-latest]
 
     name: ${{ matrix.os }} x Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
 
     steps:
-    # - name: Get Date
-    #   - name: Set cache date
-    #     run: echo "DATE=$(date +'%Y%m%d')" >> $GITHUB_ENV
-    #
-
-    # - name: Checkout source
-    #   uses: actions/checkout@v3
-    #   with:
-    #     fetch-depth: 100
 
     - name: EQUIV check ${{runner.os}} x ${{ inputs.python-version}}
       shell: bash -l {0}
@@ -63,6 +39,41 @@ jobs:
           echo "Linux"
         fi
 
+    # - name: Checkout source
+    #   uses: actions/checkout@v3
+    #   with:
+    #     fetch-depth: 100
+    #
+    #   # Installs environment
+    # - name: Install conda and environment
+    #   uses: ./.github/actions/install-conda
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
+    #
+    # - name: Run sharppy build
+    #   uses: ./.github/actions/run-build
+    #   # with:
+    #   #   python-version: ${{ matrix.python-version }}
+    #
+    # - name: Run sharppy release
+    #   uses: ./.github/actions/run-release
+    #   with:
+    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+    # Unused --------------------------
+    # - name: EQUIV check ${{runner.os}} x ${{ inputs.python-version}}
+    #   shell: bash -l {0}
+    #   run: |
+    #     OS=${{runner.os}}
+    #     echo ${OS:0:3}
+    #     if [[ "${OS:0:3}" == "mac" ]]; then
+    #       echo "pyinstaller SHARPpy-mac-64.spec --log-level DEBUG"
+    #     elif [[ "${OS:0:3}" == "Win" ]]; then
+    #       echo "pyinstaller SHARPpy-win7-64.spec --log-level DEBUG"
+    #     else
+    #       echo "Linux"
+    #     fi
+
     # - name: Checkout cache
     #   uses: actions/cache@v3
     #   with:
@@ -71,15 +82,4 @@ jobs:
     #     key: conda-${{ runner.os }}-${{ inputs.python-version}}-${{ hashFiles('environment.yml') }}
     #   id: cache
 
-    #   # Installs environment cache not found
-    # - name: Install conda and environment
-    #   uses: ./.github/actions/install-conda
-    #   with:
-    #     python-version: ${{ matrix.python-version }}
-    #   # if: ${{ steps.cache.outputs.cache-hit != 'true' }}
-    #
-    # - name: Run sharppy build
-    #   uses: ./.github/actions/run-build
-    #   with:
-    #     python-version: ${{ matrix.python-version }}
-    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+    # if: ${{ steps.cache.outputs.cache-hit != 'true' }}
