@@ -20,14 +20,27 @@ runs:
       run: |
         conda activate devel
         pip install -e .
-        pytest -v --junitxml=test-results.xml --color=yes
-        # mv examples\\data\\14061619.png examples\\data\\14061619_${{ runner.os }}.png
+        pytest -v --junitxml=test-results-_${{ runner.os }}.xml --color=yes
+        mv examples/data/14061619.png examples/data/14061619_${{ runner.os }}.png
 
-    - name: Publish Test Results
+    - name: Publish Test Results Win
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
       if: startsWith(runner.os, 'win')
       with:
-        files: "test-results.xml"
+        files: "test-results-_${{ runner.os }}.xml"
+
+    - name: Publish Test Results Max/Linux
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: startsWith(runner.os, 'lin') || startsWith(runner.os, 'mac')
+        with:
+          files: "test-results-_${{ runner.os }}.xml"
+
+    # Publish those artifacts for this build so testers can view them.
+    - uses: actions/upload-artifact@v3
+      with:
+        name: screenshots
+        path: examples/data/
+
 
     - name: Build ${{runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'win')
@@ -71,9 +84,3 @@ runs:
 
         # commit: 'master'
         # token: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: Publish Test Results
-    #     uses: EnricoMi/publish-unit-test-result-action@v1
-    #     if: startsWith(runner.os, 'lin') || startsWith(runner.os, 'mac')
-    #     with:
-    #       files: "test-results.xml"
