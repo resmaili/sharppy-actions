@@ -23,17 +23,17 @@ jobs:
       matrix:
         python-version: [3.8]
         include:
-          # - os: ubuntu-latest
-          #   label: linux-64
-          #   path: /usr/share/miniconda3/envs/devel
+          - os: ubuntu-latest
+            label: linux-64
+            path: /usr/share/miniconda3/envs/devel
 
           - os: macos-latest
             label: osx-64
             path: /Users/runner/miniconda3/envs/devel
 
-          # - os: windows-latest
-          #   label: win-64
-          #   path: C:\Miniconda3\envs\devel
+          - os: windows-latest
+            label: win-64
+            path: C:\Miniconda3\envs\devel
 
     name: ${{ matrix.label }} x Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
@@ -54,7 +54,7 @@ jobs:
       run: |
         OS=${{runner.os}}
         echo ${OS:0:3}
-        if [[ "${OS:0:3}" == "osx" ]]; then
+        if [[ "${OS:0:3}" == "mac" ]]; then
           echo "pyinstaller SHARPpy-mac-64.spec --log-level DEBUG"
         elif [[ "${OS:0:3}" == "win" ]]; then
           echo "pyinstaller SHARPpy-win7-64.spec --log-level DEBUG"
