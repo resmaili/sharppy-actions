@@ -36,11 +36,10 @@ runs:
         files: "test-results-_${{ runner.os }}.xml"
 
     # Publish those artifacts for this build so testers can view them.
-    - uses: actions/upload-artifact@v3
-      with:
-        name: screenshots
-        path: examples/data/
-
+    # - uses: actions/upload-artifact@v3
+    #   with:
+    #     name: screenshots
+    #     path: examples/data/
 
     - name: Build ${{runner.os}} x ${{ inputs.python-version}}
       if: startsWith(runner.os, 'win')
@@ -48,6 +47,14 @@ runs:
       run: |
         cd runsharp
         pyinstaller SHARPpy-win7-64.spec --log-level DEBUG
+        cd ..
+
+    - name: Build ${{runner.os}} x ${{ inputs.python-version}}
+      if: startsWith(runner.os, 'mac')
+      shell: bash -l {0}
+      run: |
+        cd runsharp
+        pyinstaller SHARPpy-osx.spec --log-level DEBUG
         cd ..
 
     # - uses: actions/upload-artifact@v3
@@ -60,7 +67,7 @@ runs:
 
     - name: Archive ${{ runner.os }} release
       uses: thedoctor0/zip-release@main
-      # if: startsWith(runner.os, 'win')
+      if: startsWith(runner.os, 'win')
       with:
         type: 'zip'
         filename: 'SHARPpy-${{runner.os}}.zip'
