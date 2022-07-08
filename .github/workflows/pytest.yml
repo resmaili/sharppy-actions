@@ -52,11 +52,11 @@ jobs:
     - name: EQUIV check ${{runner.os}} x ${{ inputs.python-version}}
       shell: bash -l {0}
       run: |
-        OS={${{runner.os}}:0:3}
+        OS=${${{runner.os}}:0:3}
         echo $OS
-        if [[ "${OS}" == "mac"]]; then
+        if [[ "${OS}" == "osx" ]]; then
           echo "pyinstaller SHARPpy-mac-64.spec --log-level DEBUG"
-        elif [[ "${OS}" == "mac"]]; then
+        elif [[ "${OS}" == "win" ]]; then
           echo "pyinstaller SHARPpy-win7-64.spec --log-level DEBUG"
         else
           echo "None of the above!"
