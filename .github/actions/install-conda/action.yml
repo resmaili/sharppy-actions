@@ -27,4 +27,4 @@ runs:
     - name: Install requirements (mac)
       if: startsWith(runner.os, 'mac')
       shell: bash -l {0}
-      run: mamba env update -n devel -c anaconda python.app
+      run: mamba env update -n devel python.app

@@ -36,6 +36,7 @@ runs:
     - name: Build for ${{runner.os}}
       shell: bash -l {0}
       run: |
+      cd runsharp
         OS=${{runner.os}}
         echo ${OS:0:3}
         if [[ "${OS:0:3}" == "mac" ]]; then
@@ -43,6 +44,7 @@ runs:
         elif [[ "${OS:0:3}" == "Win" ]]; then
           pyinstaller SHARPpy-win7-64.spec --log-level DEBUG
         fi
+        cd ..
 
     # Tag and release if pushed to main -----------------------
     # - name: Bump version and push tag
