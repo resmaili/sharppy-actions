@@ -30,10 +30,10 @@ runs:
         files: "test-results-_${{ runner.os }}.xml"
 
     - name: Publish Test Results Max/Linux
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: startsWith(runner.os, 'lin') || startsWith(runner.os, 'mac')
-        with:
-          files: "test-results-_${{ runner.os }}.xml"
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: startsWith(runner.os, 'lin') || startsWith(runner.os, 'mac')
+      with:
+        files: "test-results-_${{ runner.os }}.xml"
 
     # Publish those artifacts for this build so testers can view them.
     - uses: actions/upload-artifact@v3
