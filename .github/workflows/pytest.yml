@@ -49,8 +49,8 @@ jobs:
       with:
         fetch-depth: 100
 
-    - name: Fetch all history for all tags and branches
-      run: git fetch --prune --unshallow
+    # - name: Fetch all history for all tags and branches
+    #   run: git fetch --prune --unshallow
 
     # - name: Checkout cache
     #   uses: actions/cache@v3
