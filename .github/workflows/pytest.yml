@@ -56,10 +56,10 @@ jobs:
         echo ${OS:0:3}
         if [[ "${OS:0:3}" == "mac" ]]; then
           echo "pyinstaller SHARPpy-mac-64.spec --log-level DEBUG"
-        elif [[ "${OS:0:3}" == "win" ]]; then
+        elif [[ "${OS:0:3}" == "Win" ]]; then
           echo "pyinstaller SHARPpy-win7-64.spec --log-level DEBUG"
         else
-          echo "None of the above!"
+          echo "Linux"
         fi
 
     # - name: Checkout cache
