@@ -61,6 +61,7 @@ jobs:
         github_token: ${{ secrets.repo-token }}
         default_bump: 'minor'
 
+
     # Unused --------------------------
     # - name: EQUIV check ${{runner.os}} x ${{ inputs.python-version}}
     #   shell: bash -l {0}
