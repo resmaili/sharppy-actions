@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8]
-        os: [windows-latest]
+        os: [macos-latest, windows-latest]
         # include:
           # - os: [macos-latest, ubuntu-latest, windows-latest]
 
@@ -40,7 +40,7 @@ jobs:
       uses: ./.github/actions/run-build
 
     - name: Create Release
-      if: github.ref == 'refs/heads/master'
+      if: github.ref == 'refs/heads/main'
       uses: ./.github/actions/run-release
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
