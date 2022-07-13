@@ -21,14 +21,15 @@ runs:
         pip install -e .
         pytest -v --junitxml=test-results.xml --color=yes
 
-    - name: Publish Pytest Results for Windows
+    - name: Publish Pytest Results for Windows/Mac
+      if: startsWith(runner.os, 'win') || startsWith(runner.os, 'mac')
       uses: EnricoMi/publish-unit-test-result-action/composite@v1
       with:
         files: "test-results.xml"
 
-    - name: Publish Test Results for Mac/Linux
+    - name: Publish Test Results for Linux
       uses: EnricoMi/publish-unit-test-result-action@v1
-      if: startsWith(runner.os, 'lin') || startsWith(runner.os, 'mac')
+      if: startsWith(runner.os, 'lin')
       with:
         files: "test-results.xml"
 
