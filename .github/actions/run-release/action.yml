@@ -10,24 +10,6 @@ inputs:
 runs:
   using: composite
   steps:
-    # Archive the binaries -----------------------
-    - name: Archive release on Windows
-      uses: thedoctor0/zip-release@main
-      if: startsWith(runner.os, 'win')
-      with:
-        type: 'zip'
-        filename: 'SHARPpy-Windows.zip'
-        path: runsharp/dist/SHARPpy.exe
-
-    - name: Archive release on Mac
-      uses: thedoctor0/zip-release@
-      main
-      if: startsWith(runner.os, 'mac')
-      with:
-        type: 'zip'
-        filename: 'SHARPpy-MacOS.zip'
-        path: runsharp/dist/SHARPpy.app
-
     # Tag and release if pushed to main -----------------------
     - name: Bump version and push tag
       id: tag_version
