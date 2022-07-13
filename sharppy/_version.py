@@ -16,7 +16,6 @@ import re
 import subprocess
 import sys
 
-__codename__ = 'Andover'
 
 def get_keywords():
     """Get the keywords needed to look up the version information."""

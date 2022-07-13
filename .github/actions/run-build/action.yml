@@ -40,28 +40,11 @@ runs:
         OS=${{runner.os}}
         echo ${OS:0:3}
         if [[ "${OS:0:3}" == "mac" ]]; then
-          pyinstaller SHARPpy-mac-64.spec --log-level DEBUG
+          pyinstaller SHARPpy-osx.spec --log-level DEBUG
         elif [[ "${OS:0:3}" == "Win" ]]; then
           pyinstaller SHARPpy-win7-64.spec --log-level DEBUG
         fi
         cd ..
-
-    # Tag and release if pushed to main -----------------------
-    # - name: Bump version and push tag
-    #   id: tag_version
-    #   uses: mathieudutour/github-tag-action@v6.0
-    #   with:
-    #     github_token: ${{ inputs.repo-token }}
-    #     default_bump: 'minor'
-    #
-    # - name: Create ${{ runner.os }} release
-    #   uses: ncipollo/release-action@v1
-    #   with:
-    #     artifacts: "SHARPpy-${{ runner.os }}.zip"
-    #     allowUpdates: true
-    #     tag: ${{ steps.tag_version.outputs.new_tag }}
-    #     name: Release ${{ steps.tag_version.outputs.new_tag }}
-    #     body: ${{ steps.tag_version.outputs.changelog }}
 
     # Unused -----------------------
       # commit: 'master'

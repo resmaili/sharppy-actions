@@ -16,15 +16,16 @@ runs:
       if: startsWith(runner.os, 'win')
       with:
         type: 'zip'
-        filename: 'SHARPpy-${{runner.os}}.zip'
+        filename: 'SHARPpy-Windows.zip'
         path: runsharp/dist/SHARPpy.exe
 
     - name: Archive release on Mac
-      uses: thedoctor0/zip-release@main
+      uses: thedoctor0/zip-release@
+      main
       if: startsWith(runner.os, 'mac')
       with:
         type: 'zip'
-        filename: 'SHARPpy-${{runner.os}}.zip'
+        filename: 'SHARPpy-MacOS.zip'
         path: runsharp/dist/SHARPpy.app
 
     # Tag and release if pushed to main -----------------------
@@ -35,10 +36,10 @@ runs:
         github_token: ${{ inputs.repo-token }}
         default_bump: 'minor'
 
-    - name: Create ${{ runner.os }} release
+    - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "SHARPpy-${{ runner.os }}.zip"
+        artifacts: "SHARPpy-*.zip"
         allowUpdates: true
         tag: ${{ steps.tag_version.outputs.new_tag }}
         name: Release ${{ steps.tag_version.outputs.new_tag }}
