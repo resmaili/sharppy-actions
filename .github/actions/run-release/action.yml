@@ -16,7 +16,7 @@ runs:
       uses: mathieudutour/github-tag-action@v6.0
       with:
         github_token: ${{ inputs.repo-token }}
-        default_bump: 'false'
+        default_bump: false
 
     - name: Create release
       uses: ncipollo/release-action@v1
