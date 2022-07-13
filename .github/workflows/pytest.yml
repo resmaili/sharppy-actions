@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         python-version: [3.8]
-        os: [windows-latest]
+        os: [ubuntu-latest]
         # include:
           # - os: [macos-latest, ubuntu-latest, windows-latest]
 
@@ -30,12 +30,11 @@ jobs:
       with:
         fetch-depth: 100
 
-    - name: Get the version
-      id: get_version
-      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+    - id: get_version
+      uses: battila7/get-version-action@v2
+      
+    - run: echo ${{ steps.get_version.outputs.version }}
 
-    - name: ${{ steps.get_version.outputs.VERSION }}
-      run: echo ${{ steps.get_version.outputs.VERSION }}
 
 
 
