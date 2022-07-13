@@ -35,7 +35,7 @@ jobs:
       uses: mathieudutour/github-tag-action@v6.0
       with:
         github_token: ${{ secrets.repo-token }}
-        default_bump: false
+        default_bump: 'patch'
 
     - run: echo ${{ steps.tag_version.outputs.new_tag }}
 
