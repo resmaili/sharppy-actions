@@ -49,12 +49,16 @@ jobs:
   tag:
     name: Increment the version number
     steps:
+    - name: Checkout Source
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 100
 
-    - name: Get existing tag
+    - name: Increment tag
       id: tag_version
       uses: mathieudutour/github-tag-action@v6.0
       with:
-        github_token: ${{ inputs.repo-token }}
+        github_token: ${{ secrets.repo-token }}
         default_bump: 'minor'
 
     # Unused --------------------------
