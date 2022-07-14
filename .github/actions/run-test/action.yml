@@ -5,8 +5,7 @@ defaults:
 
 runs:
   using: composite
-  env:
-    PYTEST_QT_API: pyqt5
+
   steps:
 
     # Run pytest and publish results -----------------------
