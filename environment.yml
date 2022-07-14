@@ -10,7 +10,6 @@ dependencies:
   - qtpy
   - sphinx
   - pytest
-  # - pytest-qt
   - pytest-xvfb
   - sphinx_rtd_theme
   - requests
