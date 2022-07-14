@@ -7,10 +7,11 @@ dependencies:
   - python=3.9
   - numpy>=1.15
   - pyside2>=5.12
+  - qtpy
   - sphinx
   - pytest
+  - pytest-qt
   - pytest-xvfb
-  - qtpy
   - sphinx_rtd_theme
   - requests
   - python-dateutil
