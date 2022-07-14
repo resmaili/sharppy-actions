@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - main
-  tags:
-    - v*
+    tags:
+      - v*
   # pull_request:
   #   branches: [ main ]
   # schedule:
@@ -12,7 +12,7 @@ on:
 
 
 jobs:
-  test:
+  build:
     defaults:
       run:
         shell: bash -l {0}
@@ -24,7 +24,7 @@ jobs:
         include:
           - os: [macos-latest, windows-latest]
 
-    name: ${{ matrix.os }} Build
+    name: ${{ matrix.os }} Build and Release
     runs-on: ${{ matrix.os }}
 
     steps:

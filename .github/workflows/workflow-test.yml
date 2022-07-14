@@ -1,6 +1,8 @@
 name: workflow-test
 on:
   push:
+  tags:
+    - test
 
 jobs:
   test:

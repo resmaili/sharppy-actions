@@ -14,8 +14,8 @@ jobs:
         shell: bash -l {0}
 
     # Control the os/python builds
-    name: windows x Python 3.8
-    runs-on: windows-latest
+    name: Pytest
+    runs-on: macos-latest
 
     steps:
     - name: Checkout Source
@@ -29,7 +29,7 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Run Tests
+    - name: Run Pytest
       uses: ./.github/actions/run-test
 
     # Unused --------------------------
