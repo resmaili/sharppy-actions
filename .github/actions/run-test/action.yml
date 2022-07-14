@@ -11,10 +11,11 @@ runs:
     - name: Run Pytest
       shell: bash -l {0}
       uses: GabrielBB/xvfb-action@v1
-      run: |
-        conda activate devel
-        pip install -e .
-        xvfb-run pytest -v --junitxml=test-results.xml --color=yes
+      with:
+        run: |
+          conda activate devel
+          pip install -e .
+          xvfb-run pytest -v --junitxml=test-results.xml --color=yes
 
     - name: Publish Pytest Results for Windows/Mac
       if: startsWith(runner.os, 'win') || startsWith(runner.os, 'mac')
