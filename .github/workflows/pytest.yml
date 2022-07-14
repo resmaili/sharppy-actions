@@ -14,8 +14,8 @@ jobs:
         shell: bash -l {0}
 
     # Control the os/python builds
-    name: Ubuntu x Python 3.8
-    runs-on: ubuntu-latest
+    name: windows x Python 3.8
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Source
