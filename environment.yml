@@ -9,6 +9,7 @@ dependencies:
   - pyside2>=5.12
   - sphinx
   - pytest
+  - pytest-xvfb
   - qtpy
   - sphinx_rtd_theme
   - requests
