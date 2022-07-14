@@ -14,15 +14,8 @@ jobs:
         shell: bash -l {0}
 
     # Control the os/python builds
-    strategy:
-      matrix:
-        python-version: [3.8]
-        os: [ubuntu-latest]
-        # include:
-          # - os: [macos-latest, ubuntu-latest, windows-latest]
-
-    name: ${{ matrix.os }} x Python ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
+    name: Ubuntu x Python 3.8
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Source
@@ -30,50 +23,14 @@ jobs:
       with:
         fetch-depth: 100
 
-    - name: Get existing tag
-      id: tag_version
-      uses: mathieudutour/github-tag-action@v6.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        default_bump: false
-
-    - run: echo ${{steps.tag_version.outputs.new_tag}}
-
-
-
-
       # Installs environment
-    # - name: Install Conda and Environment
-    #   uses: ./.github/actions/install-conda
-    #   with:
-    #     python-version: ${{ matrix.python-version }}
-    #
-    # - name: Test and Build
-    #   uses: ./.github/actions/run-build
-    #
-    # - name: Create Release
-    #   if: github.ref == 'refs/heads/main'
-    #   uses: ./.github/actions/run-release
-    #   with:
-    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Install Conda and Environment
+      uses: ./.github/actions/install-conda
+      with:
+        python-version: 3.8
 
-  # tags:
-  #   name: Increment the version number
-  #   runs-on: ubuntu-latest
-  #
-  #   steps:
-  #   - name: Checkout Source
-  #     uses: actions/checkout@v3
-  #     with:
-  #       fetch-depth: 100
-  #
-  #   - name: Increment tag
-  #     id: tag_version
-  #     uses: mathieudutour/github-tag-action@v6.0
-  #     with:
-  #       github_token: ${{ secrets.repo-token }}
-  #       default_bump: 'minor'
-
+    - name: Run Tests
+      uses: ./.github/actions/run-test
 
     # Unused --------------------------
     # - name: EQUIV check ${{runner.os}} x ${{ inputs.python-version}}
