@@ -1,6 +1,8 @@
 name: workflow-test
 on:
   push:
+    branches:
+      - main
   tags:
     - test
 
