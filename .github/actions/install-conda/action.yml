@@ -11,6 +11,15 @@ runs:
   using: composite
   steps:
       # Install python
+    # - name: Set up Python ${{ inputs.python-version }}
+    #   uses: conda-incubator/setup-miniconda@v2
+    #   with:
+    #     miniforge-variant: mambaforge
+    #     miniforge-version: latest
+    #     python-version: ${{ inputs.python-version }}
+    #     activate-environment: devel
+    #     use-only-tar-bz2: true
+
     - name: Set up Python ${{ inputs.python-version }}
       uses: conda-incubator/setup-miniconda@v2
       with:
@@ -22,9 +31,9 @@ runs:
 
     - name: Install requirements (all)
       shell: bash -l {0}
-      run: mamba env update -n devel -f environment.yml
+      run: conda env update -n devel -f environment.yml
 
     - name: Install requirements (mac)
       if: startsWith(runner.os, 'mac')
       shell: bash -l {0}
-      run: mamba env update -n devel python.app
+      run: conda env update -n devel python.app
