@@ -13,9 +13,7 @@ runs:
       run: |
         conda activate devel
         pip install -e .
-        pytest -v --junitxml=test-results.xml --color=yes
-      env:
-        LD_LIBRARY_PATH: /usr/local/lib
+        pytest -v --junitxml=test-results.xml --color=yes --l -tb=long
 
     - name: Publish Pytest Results for Windows/Mac
       if: startsWith(runner.os, 'win') || startsWith(runner.os, 'mac')
