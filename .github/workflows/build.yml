@@ -40,16 +40,15 @@ jobs:
         fetch-depth: 100
 
       # Installs environment
-    - name: Install Conda and Environment
-      uses: ./.github/actions/install-conda
-      with:
-        python-version: ${{ matrix.python-version }}
+    # - name: Install Conda and Environment
+    #   uses: ./.github/actions/install-conda
+    #   with:
+    #     python-version: ${{ matrix.python-version }}
 
-    - name: Build binaries
-      uses: ./.github/actions/run-build
+    # - name: Build binaries
+    #   uses: ./.github/actions/run-build
 
     - name: Create Release
-      if: github.ref == 'refs/heads/main'
       uses: ./.github/actions/run-release
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
