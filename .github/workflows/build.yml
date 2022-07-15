@@ -37,9 +37,6 @@ jobs:
       with:
         fetch-depth: 100
 
-    - name: Check ref_name
-      run: echo ${{ github.ref_name }}
-
       # Installs environment
     # - name: Install Conda and Environment
     #   uses: ./.github/actions/install-conda
@@ -49,8 +46,8 @@ jobs:
     # - name: Build binaries
     #   uses: ./.github/actions/run-build
 
-    # - name: Create Release
+    - name: Create Release
       uses: ./.github/actions/run-release
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        tag: github.ref_name
+        tag: ${{ github.ref_name }}
