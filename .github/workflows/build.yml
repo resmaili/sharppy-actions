@@ -26,7 +26,7 @@ jobs:
         python-version: [3.9]
         include:
           # - os: [macos-latest, windows-latest]
-          - os: [windows-latest]
+          - os: [ubuntu-latest]
 
     name: ${{ matrix.os }} Build and Release
     runs-on: ${{ matrix.os }}
