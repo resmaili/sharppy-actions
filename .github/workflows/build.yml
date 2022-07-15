@@ -40,15 +40,10 @@ jobs:
 
     - name: Set env
       id: vars
-      run: echo ::set-output name=tag::$(git describe --tags --abbrev=0)
+      run: echo ::set-output name=tag::$(git describe --always)
 
     - name: Check output
-      env:
-        RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-      run: |
-        echo $RELEASE_VERSION
-        echo ${{ steps.vars.outputs.tag }}
-
+      run: echo ${{ steps.vars.outputs.tag }}
 
       # Installs environment
     # - name: Install Conda and Environment
