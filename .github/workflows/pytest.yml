@@ -1,11 +1,6 @@
 name: pytest
 on:
   push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
-  # schedule:
-  #   - cron: '0 0 * * *'
 
 jobs:
   test:
@@ -18,19 +13,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Source
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 100
-
-      # Installs environment
-    - name: Install Conda and Environment
-      uses: ./.github/actions/install-conda
-      with:
-        python-version: 3.9
-
-    - name: Run Pytest
-      uses: ./.github/actions/run-test
+    - name: ${{ runner.os }}
+      run: echo ${{ runner.os }}
+    # - name: Checkout Source
+    #   uses: actions/checkout@v3
+    #   with:
+    #     fetch-depth: 100
+    #
+    #   # Installs environment
+    # - name: Install Conda and Environment
+    #   uses: ./.github/actions/install-conda
+    #   with:
+    #     python-version: 3.9
+    #
+    # - name: Run Pytest
+    #   uses: ./.github/actions/run-test
 
     # Unused --------------------------
     # - name: Checkout cache

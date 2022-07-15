@@ -44,7 +44,6 @@ runs:
       # commit: 'master'
       # token: ${{ secrets.GITHUB_TOKEN }}
 
-
       # Publish those artifacts for this build so testers can view them.
       # - uses: actions/upload-artifact@v3
       #   with:

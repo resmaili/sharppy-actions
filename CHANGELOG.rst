@@ -1,5 +1,9 @@
 Change Log
 ==========
+SHARPpy v1.5.0 Release
+--------------------------------
+NEW FEATURES
+* Users can display NUCAPS satellite soundings from direct broadcast for NOAA-20 and MetOp series satellites.
 
 SHARPpy v1.4.0 "Andover" Release
 --------------------------------

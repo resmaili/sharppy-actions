@@ -22,7 +22,7 @@ runs:
       uses: ncipollo/release-action@v1
       with:
         # artifacts: "SHARPpy-*.zip"
-        github_token: ${{ inputs.repo-token }}
+        token: ${{ inputs.repo-token }}
         allowUpdates: true
         # tag: ${{ steps.tag_version.outputs.new_tag }}
         # name: Release ${{ steps.tag_version.outputs.new_tag }}

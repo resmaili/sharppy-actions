@@ -1,16 +1,15 @@
 # For this to be triggered, need to run the following:
 # git tag -a v*.*.* -m 'Description of release.'
-# git push origin v1.5.0
+# git push origin v*.*.*
 
 name: build
 on:
   push:
     branches:
       - main
+      - master
     tags:
       - v*
-  # pull_request:
-  #   branches: [ main ]
   # schedule:
   #   - cron: '0 0 * * *'
 
