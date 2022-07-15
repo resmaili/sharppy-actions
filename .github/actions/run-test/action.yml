@@ -11,8 +11,6 @@ runs:
     # Run pytest and publish results -----------------------
     - name: Run Pytest
       shell: bash -l {0}
-      # uses: GabrielBB/xvfb-action@v1
-      # with:
       run: |
         conda activate devel
         pip install -e .
