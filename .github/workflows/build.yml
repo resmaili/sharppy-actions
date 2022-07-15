@@ -5,11 +5,11 @@
 name: build
 on:
   push:
-    branches:
-      - main
-      - master
-    # tags:
-    #   - v*.*.*
+    # branches:
+    #   - main
+    #   - master
+    tags:
+      - v*.*.*
   # schedule:
   #   - cron: '0 0 * * *'
 
@@ -38,12 +38,8 @@ jobs:
       with:
         fetch-depth: 100
 
-    - name: Set env
-      id: vars
-      run: echo ::set-output name=tag::$(git describe --always)
-
-    - name: Check output
-      run: echo ${{ steps.vars.outputs.tag }}
+    - name: Check ref_name
+      run: echo ${{ github.ref_name }}
 
       # Installs environment
     # - name: Install Conda and Environment
