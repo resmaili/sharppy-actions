@@ -19,6 +19,7 @@ runs:
         default_bump: false
 
     - name: ${{ steps.tag_version.outputs.new_tag }}
+      shell: bash -l {0}
       run: echo ${{ steps.tag_version.outputs.new_tag }}
 
     # - name: Create release
