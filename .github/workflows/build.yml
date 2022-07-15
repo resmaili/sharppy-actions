@@ -50,6 +50,7 @@ jobs:
     #   uses: ./.github/actions/run-build
 
     # - name: Create Release
-    #   uses: ./.github/actions/run-release
-    #   with:
-    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+      uses: ./.github/actions/run-release
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        tag: github.ref_name

@@ -6,6 +6,8 @@ defaults:
 inputs:
   repo-token:
     required: true
+  tag:
+    required: true
 
 runs:
   using: composite
@@ -28,4 +30,5 @@ runs:
         # artifacts: "SHARPpy-*.zip"
         token: ${{ inputs.repo-token }}
         allowUpdates: true
+        tag: ${{ inputs.tag }}
     #     tag: ${{ steps.tag_version.outputs.previous_tag }}
