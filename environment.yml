@@ -12,6 +12,7 @@ dependencies:
   - pytest
   - pytest-xvfb
   - sphinx_rtd_theme
+  - sphinx-gallery
   - requests
   - python-dateutil
   - pyinstaller
