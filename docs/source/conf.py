@@ -23,14 +23,14 @@ project = 'SHARPpy'
 copyright = '2019, Blumberg, W.G, Halbert, K.T., Supinie, T.A., Marsh, P.T., Thompson, R., and J. Hart'
 author = 'Blumberg, W.G, Halbert, K.T., Supinie, T.A., Marsh, P.T., Thompson, R., and J. Hart'
 
-from sharppy._version import get_versions
-# The short X.Y version
-version = get_versions()['version']
-# The full version, including alpha/beta/rc tags
-release = get_versions()['version']
-release = release.split('+')[0]
-version = release.split('+')[0]
-del get_versions 
+# from sharppy._version import get_versions
+# # The short X.Y version
+# version = get_versions()['version']
+# # The full version, including alpha/beta/rc tags
+# release = get_versions()['version']
+# release = release.split('+')[0]
+# version = release.split('+')[0]
+# del get_versions
 
 # -- General configuration ---------------------------------------------------
 
