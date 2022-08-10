@@ -42,8 +42,10 @@ Noteable Links
    interacting_gui
    datasource_guide
    scripting
+   modules
    ..
     auto_examples/index
+   modules
    contributing
    citing
 

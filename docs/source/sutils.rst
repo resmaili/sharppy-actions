@@ -1,53 +1,53 @@
-utils package
+sutils package
 =============
 
 Submodules
 ----------
 
-utils.async module
+sutils.async module
 ------------------
 
-.. automodule:: utils.async
+.. automodule:: sutils.async
     :members:
     :undoc-members:
     :show-inheritance:
 
-utils.async\_threads module
+sutils.async\_threads module
 ---------------------------
 
-.. automodule:: utils.async_threads
+.. automodule:: sutils.async_threads
     :members:
     :undoc-members:
     :show-inheritance:
 
-utils.config module
+sutils.config module
 -------------------
 
-.. automodule:: utils.config
+.. automodule:: sutils.config
     :members:
     :undoc-members:
     :show-inheritance:
 
-utils.frozenutils module
+sutils.frozensutils module
 ------------------------
 
-.. automodule:: utils.frozenutils
+.. automodule:: sutils.frozensutils
     :members:
     :undoc-members:
     :show-inheritance:
 
-utils.progress module
+sutils.progress module
 ---------------------
 
-.. automodule:: utils.progress
+.. automodule:: sutils.progress
     :members:
     :undoc-members:
     :show-inheritance:
 
-utils.utils module
+sutils.sutils module
 ------------------
 
-.. automodule:: utils.utils
+.. automodule:: sutils.sutils
     :members:
     :undoc-members:
     :show-inheritance:
@@ -56,7 +56,7 @@ utils.utils module
 Module contents
 ---------------
 
-.. automodule:: utils
+.. automodule:: sutils
     :members:
     :undoc-members:
     :show-inheritance:
