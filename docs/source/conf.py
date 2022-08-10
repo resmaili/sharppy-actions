@@ -44,15 +44,15 @@ author = 'Blumberg, W.G, Halbert, K.T., Supinie, T.A., Marsh, P.T., Thompson, R.
 extensions = ['sphinx.ext.napoleon',
               'sphinx.ext.viewcode',
               'sphinx.ext.autodoc',
-              'sphinx_gallery.gen_gallery',
+              # 'sphinx_gallery.gen_gallery',
               'sphinx-prompt']
 
-sphinx_gallery_conf = {
-     # path to your examples scripts
-     'examples_dirs': '../../examples',
-     # path where to save gallery generated examples
-     'gallery_dirs': 'auto_examples',
-}
+# sphinx_gallery_conf = {
+#      # path to your examples scripts
+#      'examples_dirs': '../../examples',
+#      # path where to save gallery generated examples
+#      'gallery_dirs': 'auto_examples',
+# }
 
 #autodoc_mock_imports = ["numpy", "qtpy"]
 
@@ -60,7 +60,7 @@ napoleon_google_docstring = False
 napolean_numpy_docstring = True
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['ntemplates']
+# templates_path = ['ntemplates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
