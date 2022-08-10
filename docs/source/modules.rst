@@ -5,6 +5,7 @@ SHARPpy
    :maxdepth: 4
 
    datasources
-   setup
-   sharppy
+   sharppy.io
+   sharppy.sharptab
+   sharppy.viz
    utils
