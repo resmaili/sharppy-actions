@@ -7,12 +7,13 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Source
+    - name: Checkout source
       uses: actions/checkout@v3
       with:
         fetch-depth: 1
 
-    - uses: ammaraskar/sphinx-action@master
+    - name: Build sphinx docs
+      uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
 
@@ -39,7 +40,8 @@ jobs:
     #     cd ..
 
     # Create an artifact of the html output.
-    - uses: actions/upload-artifact@v1
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v1
       with:
         name: DocumentationHTML
         path: docs/build/html/
@@ -68,10 +70,10 @@ jobs:
     #     directory: docs/build/html
     #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Deploy
-            uses: JamesIves/github-pages-deploy-action@v4
-            with:
-              folder: docs/build
-              clean: true
-              branch: gh-pages
-              token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy docs to gh-pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: docs/build
+        clean: true
+        branch: gh-pages
+        token: ${{ secrets.GITHUB_TOKEN }}
