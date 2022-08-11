@@ -54,8 +54,8 @@ jobs:
         cd docs/build/html/
 
         touch .nojekyll
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "${{ secrets.GH_MAIL }}"
+        git config --local user.name ${{ secrets.GH_USER }}
         git add .
         git commit -m "Update documentation" -a || true
 
