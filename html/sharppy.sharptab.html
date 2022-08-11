@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sharppy.sharptab package &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sharppy.viz package" href="sharppy.viz.html" />
+    <link rel="prev" title="sharppy.io package" href="sharppy.io.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SHARPpy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="picker.html">Running SHARPpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interpreting_gui.html">Interpreting the GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="insets.html">Interpreting the Insets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharppy.io.html">sharppy.io package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sharppy.sharptab package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-constants-module">sharppy.sharptab.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-fire-module">sharppy.sharptab.fire module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-interp-module">sharppy.sharptab.interp module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-params-module">sharppy.sharptab.params module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-prof-collection-module">sharppy.sharptab.prof_collection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-profile-module">sharppy.sharptab.profile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-thermo-module">sharppy.sharptab.thermo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-utils-module">sharppy.sharptab.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-watch-type-module">sharppy.sharptab.watch_type module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-winds-module">sharppy.sharptab.winds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sutils.html">sutils package</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharppy.io.html">sharppy.io package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">sharppy.sharptab package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-constants-module">sharppy.sharptab.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-fire-module">sharppy.sharptab.fire module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-interp-module">sharppy.sharptab.interp module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-params-module">sharppy.sharptab.params module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-prof-collection-module">sharppy.sharptab.prof_collection module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-profile-module">sharppy.sharptab.profile module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-thermo-module">sharppy.sharptab.thermo module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-utils-module">sharppy.sharptab.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-watch-type-module">sharppy.sharptab.watch_type module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharppy-sharptab-winds-module">sharppy.sharptab.winds module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sutils.html">sutils package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SHARPpy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">SHARPpy</a> &raquo;</li>
+      <li>sharppy.sharptab package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sharppy.sharptab.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="sharppy-sharptab-package">
+<h1>sharppy.sharptab package<a class="headerlink" href="#sharppy-sharptab-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<p>Modules that perform data analysis and processing tasks in SHARPpy.</p>
+</div>
+<div class="section" id="sharppy-sharptab-constants-module">
+<h2>sharppy.sharptab.constants module<a class="headerlink" href="#sharppy-sharptab-constants-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains constants used by the SHARPpy routines.</p>
+</div>
+<div class="section" id="sharppy-sharptab-fire-module">
+<h2>sharppy.sharptab.fire module<a class="headerlink" href="#sharppy-sharptab-fire-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains routines that analyze the potential for fire weather using
+sounding profiles.</p>
+</div>
+<div class="section" id="sharppy-sharptab-interp-module">
+<h2>sharppy.sharptab.interp module<a class="headerlink" href="#sharppy-sharptab-interp-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains routines that use the numpy interpolation routines to interpolate
+various variables in the sounding data.</p>
+</div>
+<div class="section" id="sharppy-sharptab-params-module">
+<h2>sharppy.sharptab.params module<a class="headerlink" href="#sharppy-sharptab-params-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains a wide variety of routines that calculate convection indices.</p>
+</div>
+<div class="section" id="sharppy-sharptab-prof-collection-module">
+<h2>sharppy.sharptab.prof_collection module<a class="headerlink" href="#sharppy-sharptab-prof-collection-module" title="Permalink to this headline">¶</a></h2>
+<p>Code that describes the “Profile Collection” objects that is used by the
+sharppy.io.decoders and the SHARPpy GUI.  This is essentially an object that
+is a collection of Profile objects.</p>
+</div>
+<div class="section" id="sharppy-sharptab-profile-module">
+<span id="sharppy-sharptab-prof-collection"></span><h2>sharppy.sharptab.profile module<a class="headerlink" href="#sharppy-sharptab-profile-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains code to create the Profile objects.</p>
+</div>
+<div class="section" id="sharppy-sharptab-thermo-module">
+<h2>sharppy.sharptab.thermo module<a class="headerlink" href="#sharppy-sharptab-thermo-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains code to perform thermodynamic routines (i.e. saturated lifting,
+dry lifting, calculation of dewpoint, mixing ratio, equivalent potential temperature)</p>
+</div>
+<div class="section" id="sharppy-sharptab-utils-module">
+<h2>sharppy.sharptab.utils module<a class="headerlink" href="#sharppy-sharptab-utils-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains helper functions to convert data types.</p>
+</div>
+<div class="section" id="sharppy-sharptab-watch-type-module">
+<h2>sharppy.sharptab.watch_type module<a class="headerlink" href="#sharppy-sharptab-watch-type-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains functions to calculate the possible hazard type
+and precipitation type values (for the Winter inset).</p>
+</div>
+<div class="section" id="sharppy-sharptab-winds-module">
+<h2>sharppy.sharptab.winds module<a class="headerlink" href="#sharppy-sharptab-winds-module" title="Permalink to this headline">¶</a></h2>
+<p>Contains functions to analyze the wind data of Profile objects.  Contains
+routines to calculate wind shear, pressure-weighted mean winds, storm-relative
+helicity, and critical angle.</p>
+</div>
+<div class="section" id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sharppy.io.html" class="btn btn-neutral float-left" title="sharppy.io package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sharppy.viz.html" class="btn btn-neutral float-right" title="sharppy.viz package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2019, Blumberg, W.G, Halbert, K.T., Supinie, T.A., Marsh, P.T., Thompson, R., and J. Hart.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
