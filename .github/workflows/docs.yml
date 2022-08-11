@@ -45,25 +45,33 @@ jobs:
         path: docs/build/html/
 
     # Publish built docs to gh-pages branch.
-    - name: Commit documentation changes
-      run: |
-        git config --local user.email "${{ secrets.GH_MAIL }}"
-        git config --local user.name ${{ secrets.GH_USER }}
-        
-        git clone https://github.com/resmaili/sharppy-actions.git --branch gh-pages --single-branch gh-pages
+    # - name: Commit documentation changes
+    #   run: |
+    #     git config --local user.email "${{ secrets.GH_MAIL }}"
+    #     git config --local user.name ${{ secrets.GH_USER }}
+    #
+    #     git clone https://github.com/resmaili/sharppy-actions.git --branch gh-pages --single-branch gh-pages
+    #
+    #     # cp -r docs/build/html/* gh-pages/
+    #     # cd gh-pages
+    #     cd docs/build/html/
+    #
+    #     touch .nojekyll
+    #
+    #     git add .
+    #     git commit -m "Update documentation" -a || true
+    #
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     branch: gh-pages
+    #     directory: docs/build/html
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
-        # cp -r docs/build/html/* gh-pages/
-        # cd gh-pages
-        cd docs/build/html/
-
-        touch .nojekyll
-
-        git add .
-        git commit -m "Update documentation" -a || true
-
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: gh-pages
-        directory: docs/build/html
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Deploy
+            uses: JamesIves/github-pages-deploy-action@v4
+            with:
+              folder: docs/build
+              clean: true
+              branch: gh-pages
+              token: ${{ secrets.GITHUB_TOKEN }}
