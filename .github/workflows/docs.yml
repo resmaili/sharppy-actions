@@ -39,7 +39,7 @@ jobs:
 
         make html
 
-        touch html/.nojekyll
+        touch build/html/.nojekyll
 
         cd ..
 

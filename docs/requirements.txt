@@ -1,6 +1,7 @@
 numpy
 matplotlib
 pyside2
+os
 sphinx
 qtpy
 sphinx_rtd_theme
