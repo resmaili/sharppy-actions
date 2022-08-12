@@ -17,6 +17,14 @@ jobs:
       with:
         docs-folder: "docs/"
 
+    - name: special files
+      shell: bash -l {0}
+      run: |
+        cd docs/build/html/
+        touch .nojekyll
+        cp ~/LICENCE.md .
+        cp ~/README.md .
+
       # Installs environment
     # - name: Install Conda and Environment
     #   uses: ./.github/actions/install-conda
@@ -40,11 +48,11 @@ jobs:
     #     cd ..
 
     # Create an artifact of the html output.
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v1
-      with:
-        name: DocumentationHTML
-        path: docs/build/html/
+    # - name: Upload build artifacts
+    #   uses: actions/upload-artifact@v1
+    #   with:
+    #     name: DocumentationHTML
+    #     path: docs/build/html/
 
     # Publish built docs to gh-pages branch.
     # - name: Commit documentation changes
@@ -73,7 +81,10 @@ jobs:
     - name: Deploy docs to gh-pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: docs/build
+        folder: docs/build/html/
         clean: true
         branch: gh-pages
         token: ${{ secrets.GITHUB_TOKEN }}
+        clean-exclude: |
+          .nojekyll
+          *.md
