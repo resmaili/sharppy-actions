@@ -17,13 +17,13 @@ jobs:
       with:
         docs-folder: "docs/"
 
-    - name: special files
-      shell: bash -l {0}
-      run: |
-        cd docs/build/html/
-        touch .nojekyll
-        cp ~/LICENCE.md .
-        cp ~/README.md .
+    # - name: special files
+    #   shell: bash -l {0}
+    #   run: |
+    #     cd docs/build/html/
+    #     touch .nojekyll
+    #     cp ~/LICENCE.md .
+    #     cp ~/README.md .
 
       # Installs environment
     # - name: Install Conda and Environment
