@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Change Log &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Change Log &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,6 +45,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Change Log</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sharppy-v1-5-0-release">SHARPpy v1.5.0 Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sharppy-v1-4-0-andover-release">SHARPpy v1.4.0 “Andover” Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sharppy-v1-3-0-xenia-release">SHARPpy v1.3.0 “Xenia” Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sharppy-v1-2-0-el-reno-release">SHARPpy v1.2.0 “El Reno” Release</a></li>
@@ -51,7 +59,7 @@
 <li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
@@ -81,57 +89,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="change-log">
-<h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sharppy-v1-4-0-andover-release">
-<h2>SHARPpy v1.4.0 “Andover” Release<a class="headerlink" href="#sharppy-v1-4-0-andover-release" title="Permalink to this headline">¶</a></h2>
+  <section id="change-log">
+<h1>Change Log<a class="headerlink" href="#change-log" title="Permalink to this heading"></a></h1>
+<section id="sharppy-v1-5-0-release">
+<h2>SHARPpy v1.5.0 Release<a class="headerlink" href="#sharppy-v1-5-0-release" title="Permalink to this heading"></a></h2>
+<p>NEW FEATURES
+* Users can display NUCAPS satellite soundings from direct broadcast for NOAA-20 and MetOp series satellites.</p>
+</section>
+<section id="sharppy-v1-4-0-andover-release">
+<h2>SHARPpy v1.4.0 “Andover” Release<a class="headerlink" href="#sharppy-v1-4-0-andover-release" title="Permalink to this heading"></a></h2>
 <p>NEW FEATURES</p>
 <ul class="simple">
-<li><dl class="simple">
-<dt>User preferences</dt><dd><ul>
-<li><p>Change units for wind, surface temperature and dewpoint</p></li>
-<li><p>Choice of three color schemes: standard (the usual white-on-black), inverted (black-on-white), and protanopia (white-on-black, but with colorblind-friendly colors)</p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li><p>User preferences</p></li>
 <li><p>Python 3 support</p></li>
-<li><dl class="simple">
-<dt>Hodograph improvements</dt><dd><ul>
 <li><p>Can now click and drag the storm-motion vectors, updating all the other insets</p></li>
 <li><p>Double click to change which storm motion vector is used for storm-relative calculations</p></li>
 <li><p>New readout on the hodograph, coupled to the readout on the Skew-T</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>Improvements for southern-hemisphere users</dt><dd><ul>
-<li><p>Wind barbs are flipped</p></li>
-<li><p>Left-mover vector is used by default</p></li>
+<li><p>Improvements for southern-hemisphere users</p></li>
 <li><p>Storm motion vector is chosen if the SPC-formatted sounding file specifies the latitude and longitude of the input sounding (southern-hemisphere uses the left-mover, northern the right-mover).</p></li>
 <li><p>Left-mover vector is used in all other storm-motion dependent functions (e.g., STP insets, SARS).</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>New data sources for international and U.S. users</dt><dd><ul>
 <li><p>Realtime and historical U.S. and international soundings from 1946-now are accessible through the Picker. Soundings include the latitude and longitude.</p></li>
 <li><p>IEM BUFKIT sounding archive (data back to 2010 from RUC, NAM, GFS, RAP)</p></li>
-</ul>
-</dd>
-</dl>
-</li>
+<li><p>New documentation and API accessible through Github pages</p></li>
+<li><p>Improved documentation online (no longer in README)</p></li>
+<li><p>Documentation and sphinx-generated API is pushed to Github Pages with each tagged release.</p></li>
+<li><p>Readout cursor can be configured to output other variables (e.g., potential temperature, theta-E)</p></li>
+<li><p>Ability to modify surface by changing the surface temperature or dewpoint (mixed layer optional)</p></li>
 <li><p>Up/down buttons on keyboard can now be used to flip through the ensemble members plotted in the SHARPpy GUI.</p></li>
 <li><p>Logging enabled when –debug flag is enabled.</p></li>
 <li><p>GUI now displays alert box when questionable data is requested to be plotted. Users now have the option to choose if they wish to still try to plot the data.</p></li>
-<li><p>Documentation and sphinx-generated API is pushed to Github Pages with each tagged release.</p></li>
-<li><p>Continuous Integration (TravisCI and Appveyor) now enabled to test changes, pull requests, deploy docs, deploy binaries to Github, and deploy packages to package managers.</p></li>
+<li><p>Continuous Integration (TravisCI, Appveyor, Azure Pipelines) now enabled to test changes, GUI quality, pull requests, deploy docs, deploy binaries to Github, and deploy packages to package managers.</p></li>
 <li><p>New versioning system now consistent with PEP-440 (thanks to versioneer).</p></li>
-<li><p>Included more scripting examples.</p></li>
+<li><p>Included more scripting examples in docs.</p></li>
 <li><p>Deployment to conda and pip with each tagged SHARPpy release.</p></li>
 <li><p>Added test scripts to unit test various GUI parts, decoders, and numerical routines</p></li>
+<li><p>GUI checks Github Releases to see if the code being run is the current version</p></li>
 </ul>
 <p>BUG FIXES</p>
 <ul class="simple">
@@ -159,9 +151,9 @@
 <li><p>Fixed bug where missing kwarg wasn’t passed on profile copy()</p></li>
 <li><p>Fixed fatal bug with boundary motion cursor</p></li>
 </ul>
-</div>
-<div class="section" id="sharppy-v1-3-0-xenia-release">
-<h2>SHARPpy v1.3.0 “Xenia” Release<a class="headerlink" href="#sharppy-v1-3-0-xenia-release" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sharppy-v1-3-0-xenia-release">
+<h2>SHARPpy v1.3.0 “Xenia” Release<a class="headerlink" href="#sharppy-v1-3-0-xenia-release" title="Permalink to this heading"></a></h2>
 <p>SHARPpy v1.3.0, Xenia Release supports multiple profiles in the Skew-T window and features improvements to the picker map and usability of the Skew-T window.</p>
 <p>NEW FEATURES</p>
 <ul class="simple">
@@ -187,11 +179,11 @@
 <li><p>Additional error handling for partial profiles.</p></li>
 <li><p>Various model forecast points relocated to their proper places.</p></li>
 <li><p>Error handling for opening the program without an Internet connection.</p></li>
-<li><p>Removed PySide dependency and unused imports for those using SHARPpy routines in scripts.</p></li>
+<li><p>Removed qtpy dependency and unused imports for those using SHARPpy routines in scripts.</p></li>
 </ul>
-</div>
-<div class="section" id="sharppy-v1-2-0-el-reno-release">
-<h2>SHARPpy v1.2.0 “El Reno” Release<a class="headerlink" href="#sharppy-v1-2-0-el-reno-release" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sharppy-v1-2-0-el-reno-release">
+<h2>SHARPpy v1.2.0 “El Reno” Release<a class="headerlink" href="#sharppy-v1-2-0-el-reno-release" title="Permalink to this heading"></a></h2>
 <p>SHARPpy v1.2.0, El Reno Release, supports and features a new and improved user interface for selecting and interacting with sounding data sources, in addition to new SARS inset interactivity, and numerous backend changes/improvements. Please note that with these changes, the runsharp and datasources folders must not be moved, and must be run in the parent SHARPpy directory.</p>
 <p>UPDATES/FIXES</p>
 <ul class="simple">
@@ -221,14 +213,14 @@
 <li><p>Tutorial has been updated to reflect some of the internal changes of the program libraries.</p></li>
 <li><p>Custom user sounding text files can now be opened by pressing Ctrl+O on Windows and Linux.</p></li>
 </ul>
-</div>
-<div class="section" id="sharppy-v1-0-0-beta-ams-2015-release">
-<h2>SHARPpy v1.0.0 Beta (AMS 2015 Release)<a class="headerlink" href="#sharppy-v1-0-0-beta-ams-2015-release" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="sharppy-v1-0-0-beta-ams-2015-release">
+<h2>SHARPpy v1.0.0 Beta (AMS 2015 Release)<a class="headerlink" href="#sharppy-v1-0-0-beta-ams-2015-release" title="Permalink to this heading"></a></h2>
 <p>Following the SHARPpy presentation in the Python Symposium at the annual American Meteorological Society meeting, SHARPpy is being released to the public in beta status. Most core functionality is present, but it is being released with a few platform specific known bugs that are still being worked on.</p>
 <p>This release features core numerical functionality (thermodynamic and kinematic routines) for scripting and data processing, in addition to graphical user interface functionality and interactivity.</p>
 <p>Instructions on how to install and run can be found in the readme.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>datasources package &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>datasources package &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -45,27 +52,13 @@
 <li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">datasources package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#datasources-available-module">datasources.available module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#datasources-data-source-module">datasources.data_source module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.io.html">sharppy.io package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.sharptab.html">sharppy.sharptab package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sutils.html">sutils package</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">datasources package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#datasources-available-module">datasources.available module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#datasources-data-source-module">datasources.data_source module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.available">datasources.available module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.data_source">datasources.data_source module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
@@ -104,21 +97,215 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="datasources-package">
-<h1>datasources package<a class="headerlink" href="#datasources-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="datasources-available-module">
-<h2>datasources.available module<a class="headerlink" href="#datasources-available-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="datasources-data-source-module">
-<h2>datasources.data_source module<a class="headerlink" href="#datasources-data-source-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+  <section id="datasources-package">
+<h1>datasources package<a class="headerlink" href="#datasources-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-datasources.available">
+<span id="datasources-available-module"></span><h2>datasources.available module<a class="headerlink" href="#module-datasources.available" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-datasources.data_source">
+<span id="datasources-data-source-module"></span><h2>datasources.data_source module<a class="headerlink" href="#module-datasources.data_source" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.data_source.</span></span><span class="sig-name descname"><span class="pre">DataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getArchiveLens">
+<span class="sig-name descname"><span class="pre">getArchiveLens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getArchiveLens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getArchiveLens" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getAvailableAtTime">
+<span class="sig-name descname"><span class="pre">getAvailableAtTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getAvailableAtTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getAvailableAtTime" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getAvailableTimes">
+<span class="sig-name descname"><span class="pre">getAvailableTimes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_cycles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getAvailableTimes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getAvailableTimes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getDailyCycles">
+<span class="sig-name descname"><span class="pre">getDailyCycles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getDailyCycles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getDailyCycles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getDecoder">
+<span class="sig-name descname"><span class="pre">getDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getDecoder" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getDecoderAndURL">
+<span class="sig-name descname"><span class="pre">getDecoderAndURL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getDecoderAndURL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getDecoderAndURL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getDelays">
+<span class="sig-name descname"><span class="pre">getDelays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getDelays"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getDelays" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getForecastHours">
+<span class="sig-name descname"><span class="pre">getForecastHours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getForecastHours"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getForecastHours" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getMostRecentCycle">
+<span class="sig-name descname"><span class="pre">getMostRecentCycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getMostRecentCycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getMostRecentCycle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getName">
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getName"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getName" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getPoint">
+<span class="sig-name descname"><span class="pre">getPoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getPoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getPoint" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getURL">
+<span class="sig-name descname"><span class="pre">getURL</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_dt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outlet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getURL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getURL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.getURLList">
+<span class="sig-name descname"><span class="pre">getURLList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outlet_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.getURLList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.getURLList" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.isEnsemble">
+<span class="sig-name descname"><span class="pre">isEnsemble</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.isEnsemble"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.isEnsemble" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.isObserved">
+<span class="sig-name descname"><span class="pre">isObserved</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.isObserved"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.isObserved" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.DataSource.updateTimeSpan">
+<span class="sig-name descname"><span class="pre">updateTimeSpan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#DataSource.updateTimeSpan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSource.updateTimeSpan" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datasources.data_source.DataSourceError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.data_source.</span></span><span class="sig-name descname"><span class="pre">DataSourceError</span></span><a class="reference internal" href="_modules/datasources/data_source.html#DataSourceError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.DataSourceError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.data_source.</span></span><span class="sig-name descname"><span class="pre">Outlet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>An Outlet object contains all the information for a data outlet (for example, the observed
+sounding feed from SPC, which is distinct from the observed sounding feed from, say, Europe).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getArchiveLen">
+<span class="sig-name descname"><span class="pre">getArchiveLen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getArchiveLen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getArchiveLen" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getArchivedCycles">
+<span class="sig-name descname"><span class="pre">getArchivedCycles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getArchivedCycles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getArchivedCycles" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getAvailableAtTime">
+<span class="sig-name descname"><span class="pre">getAvailableAtTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getAvailableAtTime"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getAvailableAtTime" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getAvailableTimes">
+<span class="sig-name descname"><span class="pre">getAvailableTimes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_cycles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getAvailableTimes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getAvailableTimes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getCycles">
+<span class="sig-name descname"><span class="pre">getCycles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getCycles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getCycles" title="Permalink to this definition"></a></dt>
+<dd><p>Return a list of data cycles that this outlet serves.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getDecoder">
+<span class="sig-name descname"><span class="pre">getDecoder</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getDecoder" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getDelay">
+<span class="sig-name descname"><span class="pre">getDelay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getDelay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getDelay" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getFields">
+<span class="sig-name descname"><span class="pre">getFields</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getFields"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getFields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getForecastHours">
+<span class="sig-name descname"><span class="pre">getForecastHours</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getForecastHours"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getForecastHours" title="Permalink to this definition"></a></dt>
+<dd><p>Return a list of forecast hours that this outlet serves. If the ‘delta’ attribute is set to 0,
+then the data source only has the 0-hour.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getMostRecentCycle">
+<span class="sig-name descname"><span class="pre">getMostRecentCycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getMostRecentCycle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getMostRecentCycle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getPoints">
+<span class="sig-name descname"><span class="pre">getPoints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getPoints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getPoints" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getTimeSpan">
+<span class="sig-name descname"><span class="pre">getTimeSpan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getTimeSpan"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getTimeSpan" title="Permalink to this definition"></a></dt>
+<dd><p>Read in the XML data to determine the dates/times this outlet spans across</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.getURL">
+<span class="sig-name descname"><span class="pre">getURL</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.getURL"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.getURL" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.hasProfile">
+<span class="sig-name descname"><span class="pre">hasProfile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.hasProfile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.hasProfile" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datasources.data_source.Outlet.isAvailable">
+<span class="sig-name descname"><span class="pre">isAvailable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#Outlet.isAvailable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.Outlet.isAvailable" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datasources.data_source.loadDataSources">
+<span class="sig-prename descclassname"><span class="pre">datasources.data_source.</span></span><span class="sig-name descname"><span class="pre">loadDataSources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/home/runner/.sharppy/datasources'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#loadDataSources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.loadDataSources" title="Permalink to this definition"></a></dt>
+<dd><p>Load the data source information from the XML files.
+Returns a dictionary associating data source names to DataSource objects.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datasources.data_source.pingURLs">
+<span class="sig-prename descclassname"><span class="pre">datasources.data_source.</span></span><span class="sig-name descname"><span class="pre">pingURLs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/datasources/data_source.html#pingURLs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datasources.data_source.pingURLs" title="Permalink to this definition"></a></dt>
+<dd><p>Try to ping all the URLs in any XML file.
+Takes a dictionary associating data source names to DataSource objects.
+Returns a dictionary associating URLs with a boolean specifying whether or not they were reachable.</p>
+</dd></dl>
+
+</section>
+<section id="module-datasources">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datasources" title="Permalink to this heading"></a></h2>
+</section>
+</section>
 
 
            </div>

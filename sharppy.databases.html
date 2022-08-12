@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sharppy.databases package &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>sharppy.databases package &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -45,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">sharppy.databases package</a><ul>
@@ -52,23 +60,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#sharppy-databases-inset-data-module">sharppy.databases.inset_data module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharppy-databases-pwv-module">sharppy.databases.pwv module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#sharppy-databases-sars-module">sharppy.databases.sars module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.io.html">sharppy.io package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.sharptab.html">sharppy.sharptab package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sutils.html">sutils package</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">sharppy.databases package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-databases-inset-data-module">sharppy.databases.inset_data module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-databases-pwv-module">sharppy.databases.pwv module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-databases-sars-module">sharppy.databases.sars module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.databases">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sharppy.io.html">sharppy.io package</a></li>
@@ -106,28 +98,318 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="sharppy-databases-package">
-<h1>sharppy.databases package<a class="headerlink" href="#sharppy-databases-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-databases-inset-data-module">
-<h2>sharppy.databases.inset_data module<a class="headerlink" href="#sharppy-databases-inset-data-module" title="Permalink to this headline">¶</a></h2>
+  <section id="sharppy-databases-package">
+<h1>sharppy.databases package<a class="headerlink" href="#sharppy-databases-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="sharppy-databases-inset-data-module">
+<h2>sharppy.databases.inset_data module<a class="headerlink" href="#sharppy-databases-inset-data-module" title="Permalink to this heading"></a></h2>
 <p>Contains data to be drawn on various insets (such as the
 line graphs and box and whisker plots in the SHIP or STP EF insets)</p>
-</div>
-<div class="section" id="sharppy-databases-pwv-module">
-<h2>sharppy.databases.pwv module<a class="headerlink" href="#sharppy-databases-pwv-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-sharppy.databases.inset_data"></span><dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.inset_data.condSTPData">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.inset_data.</span></span><span class="sig-name descname"><span class="pre">condSTPData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/inset_data.html#condSTPData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.inset_data.condSTPData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.inset_data.sherbData">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.inset_data.</span></span><span class="sig-name descname"><span class="pre">sherbData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/inset_data.html#sherbData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.inset_data.sherbData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.inset_data.shipData">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.inset_data.</span></span><span class="sig-name descname"><span class="pre">shipData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/inset_data.html#shipData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.inset_data.shipData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.inset_data.stpData">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.inset_data.</span></span><span class="sig-name descname"><span class="pre">stpData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/inset_data.html#stpData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.inset_data.stpData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.inset_data.vrotData">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.inset_data.</span></span><span class="sig-name descname"><span class="pre">vrotData</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/inset_data.html#vrotData"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.inset_data.vrotData" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="sharppy-databases-pwv-module">
+<h2>sharppy.databases.pwv module<a class="headerlink" href="#sharppy-databases-pwv-module" title="Permalink to this heading"></a></h2>
 <p>Handles comparing the loaded sounding against the PWV climatology</p>
-</div>
-<div class="section" id="sharppy-databases-sars-module">
-<h2>sharppy.databases.sars module<a class="headerlink" href="#sharppy-databases-sars-module" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-sharppy.databases.pwv"></span><dl class="py class">
+<dt class="sig sig-object py" id="sharppy.databases.pwv.PWDatabase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.databases.pwv.</span></span><span class="sig-name descname"><span class="pre">PWDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'/home/runner/work/sharppy-actions/sharppy-actions/sharppy/databases'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/pwv.html#PWDatabase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.pwv.PWDatabase" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sharppy.databases.pwv.PWDatabase.getClimo">
+<span class="sig-name descname"><span class="pre">getClimo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/pwv.html#PWDatabase.getClimo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.pwv.PWDatabase.getClimo" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sharppy.databases.pwv.PWDatabase.getStddev">
+<span class="sig-name descname"><span class="pre">getStddev</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stddev</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/pwv.html#PWDatabase.getStddev"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.pwv.PWDatabase.getStddev" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.pwv.get_mean_pwv">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.pwv.</span></span><span class="sig-name descname"><span class="pre">get_mean_pwv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/pwv.html#get_mean_pwv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.pwv.get_mean_pwv" title="Permalink to this definition"></a></dt>
+<dd><p>Function to get the mean precipitable water vapor (inches) values
+for every month of the year, based on the station passed through.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Staion</strong> (<em>Can be the 4 letter station ID</em><em> (</em><em>i.e. KOUN</em><em>)</em><em>, </em><em>3 letter station</em>) – </p></li>
+<li><p><strong>OUN</strong><strong>)</strong> (<em>ID</em><em> (</em><em>i.e.</em>) – </p></li>
+<li><p><strong>72357</strong><strong>)</strong><strong>.</strong> (<em>or the 5 digit WMO ID</em><em> (</em><em>i.e.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>mean_pwv</strong> (<em>1D Array of float values corresponding to the mean PWV</em>)</p></li>
+<li><p><em>Jan - December.</em></p></li>
+<li><p><em>Written by Greg Blumberg</em></p></li>
+<li><p><em>and Kelton Halbert.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.pwv.get_stdev_pwv">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.pwv.</span></span><span class="sig-name descname"><span class="pre">get_stdev_pwv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">station</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/pwv.html#get_stdev_pwv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.pwv.get_stdev_pwv" title="Permalink to this definition"></a></dt>
+<dd><p>Function to get the standard deviation from the mean precipitable water
+vapor (inches) values for every month of the year, based on the station
+passed through.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Staion</strong> (<em>Can be the 4 letter station ID</em><em> (</em><em>i.e. KOUN</em><em>)</em><em>, </em><em>3 letter station</em>) – </p></li>
+<li><p><strong>OUN</strong><strong>)</strong> (<em>ID</em><em> (</em><em>i.e.</em>) – </p></li>
+<li><p><strong>72357</strong><strong>)</strong><strong>.</strong> (<em>or the 5 digit WMO ID</em><em> (</em><em>i.e.</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>stdev_pwv</strong> (<em>1D Array of float values corresponding to the standard deviation</em>)</p></li>
+<li><p><em>from the mean PWV</em></p></li>
+<li><p><em>Jan - December.</em></p></li>
+<li><p><em>Written by Greg Blumberg</em></p></li>
+<li><p><em>and Kelton Halbert.</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.pwv.pwv_climo">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.pwv.</span></span><span class="sig-name descname"><span class="pre">pwv_climo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">station</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/pwv.html#pwv_climo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.pwv.pwv_climo" title="Permalink to this definition"></a></dt>
+<dd><p>month is an integer from 1-12
+station_id_3 is the station ID (lower case)
+prof is the profile object</p>
+<p>This function uses the PWV climatology databases provided by Matt Bunkers (NWS/UNR)
+and accepts a SHARPPY profile object, the station name, and the month
+and returns to the user a number indicating where in the distribution the profile’s PWV
+value lies.  This function is used in SHARPPY to help provide the user climatological
+context of the PWV index they are viewing.</p>
+<p>x can equal 0, 1, 2, or 3
+If the returned value is x, the PWV lies outside +x standard deviations of the mean
+If the returned value is -x, the PWV lies outside -x standard deviations of the mean
+If the returned value is 0, the PWV lies within 1 standard deviation of the mean</p>
+<p>Written by Greg Blumberg
+and Kelton Halbert.</p>
+</dd></dl>
+
+</section>
+<section id="sharppy-databases-sars-module">
+<h2>sharppy.databases.sars module<a class="headerlink" href="#sharppy-databases-sars-module" title="Permalink to this heading"></a></h2>
 <p>Handles comparing the loaded sounding against past severe weather soundings (the SARS function).</p>
-</div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+<span class="target" id="module-sharppy.databases.sars"></span><dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.sars.getSounding">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.sars.</span></span><span class="sig-name descname"><span class="pre">getSounding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">match_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">profile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/sars.html#getSounding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.sars.getSounding" title="Permalink to this definition"></a></dt>
+<dd><p>Given a match string and type (supercell:hail) from one of the
+SARS routines, decode the raw sounding data into a Profile
+object and return said object. It will default to a “default”
+profile object that does not compute any indices, but can be
+set to profile=”convective” if indices are desired.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match_string</strong> – </p></li>
+<li><p><strong>match_type</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Profile object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.sars.get_sars_dir">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.sars.</span></span><span class="sig-name descname"><span class="pre">get_sars_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/sars.html#get_sars_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.sars.get_sars_dir" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the directory where the raw SARS files are.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>match_type</strong> (<em>str</em>) – ‘supercell’ or ‘hail’</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.sars.hail">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.sars.</span></span><span class="sig-name descname"><span class="pre">hail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mumr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mucape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h5_temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shr6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shr9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shr3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srh</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/sars.html#hail"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.sars.hail" title="Permalink to this definition"></a></dt>
+<dd><p>The SARS Hail database was provided by Ryan Jewell of the NOAA Storm
+Prediction Center in Norman, Oklahoma. This is a database of observed
+and model proximity analogue soundings to hail events.</p>
+<p>This function works by searching for matches to particular variables in
+the database that have been attributed to hail events given a certain
+range of uncertainty. The loose matches are used for statistics such as
+% significant hail matches, and are based on a looser criteria for
+matches. The analogues that get displayed are based on a tighter criteria
+for matches to insure that only quality matches are received. Ranges for
+loose and quality matches are semi-arbitrary, and were tuned by testing
+internally by SPC.</p>
+<p>The loose matches are based on the most unstable parcel mixing ratio (mumr),
+most unstable cape (mucape), 700-500mb labse rate (lr), 500mb temperature
+(h5_temp), 0-3km shear (shr3), 0-6km shear (shr6), and the 0-9km shear (shr9).</p>
+<dl class="simple">
+<dt>The ranges for the loose matches are set as such:</dt><dd><p>mumr: +/- 2.0 g/kg
+mucape: +/- 30% J/kg
+lr: +/- 2.0 C/km
+h5_temp: +/- 9.0 C
+shr6: +/- 12 m^2/s^2
+shr9: +/- 22 m^2/s^2
+shr3: +/- 10 m^2/s^2</p>
+</dd>
+</dl>
+<p>The quality matches use the fields described in the loose matches, plus the
+0-3km Storm Relative Helicity (srh). The bounds for the search for quality
+matches is much more strict that the loose matches.</p>
+<dl class="simple">
+<dt>The ranges for the quality matches are set as such:</dt><dd><p>mumr: +/- 2.0 g/kg
+mucape &lt; 500 J/kg: +/- 50% J/kg
+mucape &lt; 2000 J/kg: +/- 25% J/kg
+mucape &gt;= 2000 J/kg: +/- 20% J/kg
+lr: +/- 0.4 C/km
+h5_temp: +/- 1.5 C/km
+shr6: +/- 6 m^2/s^2
+shr9: +/- 15 m^2/s^2
+shr3: +/- 8 m^2/s^2
+srh &lt; 50 m^2/s^2: +/- 25 m^2/s^2
+srh &gt;= 50 m^2/s^2: +/- 50% m^2/s^2</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>(</strong><strong>g/kg</strong><strong>)</strong> (<em>mumr - most unstable parcel mixing ratio</em>) – </p></li>
+<li><p><strong>(</strong><strong>J/kg</strong><strong>)</strong> (<em>mucape - most unstable CAPE</em>) – </p></li>
+<li><p><strong>(</strong><strong>C</strong><strong>)</strong> (<em>h5_temp - 500 mb temperature</em>) – </p></li>
+<li><p><strong>(</strong><strong>C/km</strong><strong>)</strong> (<em>lr - 700-500 mb lapse rate</em>) – </p></li>
+<li><p><strong>(</strong><strong>m/s</strong><strong>)</strong> (<em>shr3 - 0-3 km shear</em>) – </p></li>
+<li><p><strong>(</strong><strong>m/s</strong><strong>)</strong> – </p></li>
+<li><p><strong>(</strong><strong>m/s</strong><strong>)</strong> – </p></li>
+<li><p><strong>(</strong><strong>m2/s2</strong><strong>)</strong> (<em>srh - 0-3 Storm Relative Helicity</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>quality_match_dates (str) - dates of the quality matches</em></p></li>
+<li><p><em>quality_match_sizes (float) - hail sizes of the quality matches</em></p></li>
+<li><p><em>num_loose_matches (int) - number of loose matches</em></p></li>
+<li><p><em>num_sig_reports (int) - number of significant hail reports (&gt;= 2 inches)</em></p></li>
+<li><p><em>prob_sig_hail (float) - SARS sig. hail probability</em></p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.databases.sars.supercell">
+<span class="sig-prename descclassname"><span class="pre">sharppy.databases.sars.</span></span><span class="sig-name descname"><span class="pre">supercell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">database_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mlcape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mllcl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h5temp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shr3k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shr9k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">srh3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/databases/sars.html#supercell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.databases.sars.supercell" title="Permalink to this definition"></a></dt>
+<dd><p>The SARS Supercell database was provided by Rich Thompson of the
+NOAA Storm Prediction Center in Norman, Oklahoma. This is a database
+of observed and model proximity soundings to both tornadic and
+nontornadic supercell thunderstorms.</p>
+<p>This function works by searching for matches to particular variables
+in the database that have been found to be useful in forecasting
+supercell thunderstorms. It searches through the database to find
+matches to a given sounding within a range of uncertainty that
+has been tested internally in SPC to provide the best analogues
+possible. There is a loose criteria that is used to get probabilities,
+and there is a tighter criteria for quality matches that are supposed to
+be similar to the given sounding.</p>
+<p>The loose matches are based on the mixed layer cape (mlcape), mixed layer
+lcl (mllcl), 0-1km shear (shr), 0-1km storm relative helicity (srh), 500mb
+temperature (h5temp), and the 700-500mb lapse rate (lr).</p>
+<dl class="simple">
+<dt>The ranges for the loose matches are set as such:</dt><dd><p>mlcape: +/- 1300 J/kg
+mllcl: +/- 500 m
+shr: +/- 14 kts
+srh &lt; 50 m^2/s^2: +/- 100 m^2/s^2
+srh &gt;= 50 m^2/s^2: +/- 100% m^2/s^2
+h5temp: +/- 7.0 C
+lr: +/-1.0 C/km</p>
+</dd>
+</dl>
+<p>The quality matches are based on the same variables as the loose matches,
+with the addition of the 0-3km shear (shr3k), 0-9km shear (shr9k), and the
+0-3km Storm Relative Helicity (srh3).</p>
+<dl class="simple">
+<dt>The ranges for the quality matches are set as such:</dt><dd><p>mlcape: +/- 25% J/kg
+mllcl: +/- 200 m
+shr: +/- 10 kts
+srh &lt; 100 m^2/s^2: +/- 50 m^2/s^2
+srh &gt;= 100 m^2/s^2: +/- 30% m^2/s^2
+srh3 &lt; 100 m^2/s^2: +/- 50 m^2/s^2
+srh3 &gt;= 100 m^2/s^2: +/- 50% m^s/s^2
+h5temp: +/- 5 C
+lr: +/- 0.8 C/km
+shr3k: +/- 15 kts
+shr9k: +/- 25 kts</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<em>database_fn - filename of the</em>) – </p></li>
+<li><p><strong>(</strong><strong>J/kg</strong><strong>)</strong> (<em>mlcape - the mixed layer cape</em>) – </p></li>
+<li><p><strong>(</strong><strong>m</strong><strong>)</strong> (<em>mllcl - the mixed layer LCL</em>) – </p></li>
+<li><p><strong>(</strong><strong>C</strong><strong>)</strong> (<em>h5temp - the 500mb temp</em>) – </p></li>
+<li><p><strong>(</strong><strong>C/km</strong><strong>)</strong> (<em>lr - the 700-500mb lapse rate</em>) – </p></li>
+<li><p><strong>(</strong><strong>kts</strong><strong>)</strong> (<em>shr9k - the 0-9km shear</em>) – </p></li>
+<li><p><strong>(</strong><strong>m^2/s^2</strong><strong>)</strong> (<em>srh3 - the 0-3km storm relative helicity</em>) – </p></li>
+<li><p><strong>(</strong><strong>kts</strong><strong>)</strong> – </p></li>
+<li><p><strong>(</strong><strong>kts</strong><strong>)</strong> – </p></li>
+<li><p><strong>(</strong><strong>m^2/s^2</strong><strong>)</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>quality_match_soundings</strong> (<em>The dates/locations of the quality matches</em>)</p></li>
+<li><p><strong>quality_match_tortype</strong> (<em>The type of quality match (SIGTOR/WEAKTOR/NONTOR)</em>)</p></li>
+<li><p><strong>len(loose_match_idx)</strong> (<em>The number of loose matches</em>)</p></li>
+<li><p><strong>num_matches</strong> (<em>The number of weak and sig matches in the loose matches</em>)</p></li>
+<li><p><strong>tor_prob</strong> (<em>SARS sig. tornado probability</em>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sharppy.databases">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sharppy.databases" title="Permalink to this heading"></a></h2>
+</section>
+</section>
 
 
            </div>

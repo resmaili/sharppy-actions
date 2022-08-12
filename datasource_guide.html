@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom Data Sources &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Custom Data Sources &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -50,7 +57,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
@@ -80,15 +87,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="custom-data-sources">
-<span id="id1"></span><h1>Custom Data Sources<a class="headerlink" href="#custom-data-sources" title="Permalink to this headline">¶</a></h1>
+  <section id="custom-data-sources">
+<span id="id1"></span><h1>Custom Data Sources<a class="headerlink" href="#custom-data-sources" title="Permalink to this heading"></a></h1>
 <p>Sometimes, you may want to load your own custom data into SHARPpy.</p>
 <p>This section of the documentation covers just that.</p>
-<div class="section" id="valid-data-formats">
-<h2>Valid Data Formats<a class="headerlink" href="#valid-data-formats" title="Permalink to this headline">¶</a></h2>
+<section id="valid-data-formats">
+<h2>Valid Data Formats<a class="headerlink" href="#valid-data-formats" title="Permalink to this heading"></a></h2>
 <p>SHARPpy hosts a variety of decoders within the <a class="reference internal" href="sharppy.io.html#sharppy-io"><span class="std std-ref">sharppy.io package</span></a> to help decode various human-readable text files:</p>
 <table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">SHARPpy Decoders</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">SHARPpy Decoders</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 29%" />
 <col style="width: 71%" />
@@ -146,13 +153,13 @@ reads in data files meant for only observed soundings.</p>
 <li><p>Checking to see that pressure decreases with height within the profile.</p></li>
 </ol>
 <p>The GUI should provide an error message explaining the variable type (e.g., wind speed, height) that is failing these checks.  As of version 1.4, the GUI will try to plot the data should the user desire.</p>
-</div>
-<div class="section" id="loading-in-sounding-data-files">
-<h2>Loading in Sounding Data Files<a class="headerlink" href="#loading-in-sounding-data-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="loading-in-sounding-data-files">
+<h2>Loading in Sounding Data Files<a class="headerlink" href="#loading-in-sounding-data-files" title="Permalink to this heading"></a></h2>
 <p>SHARPpy supports opening up multiple observed sounding data files in the sounding window.  While in the SHARPpy Sounding Picker, use File-&gt;Open menu to open up your text file in the sounding window.  With each file, SHARPpy will search through the list of decoders in the <a class="reference internal" href="sharppy.io.html#sharppy-io"><span class="std std-ref">sharppy.io package</span></a> to find the correct one for your file.  Example files to test this are included in the <cite>examples/data</cite> folder.</p>
-</div>
-<div class="section" id="adding-custom-data-sources">
-<h2>Adding Custom Data Sources<a class="headerlink" href="#adding-custom-data-sources" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adding-custom-data-sources">
+<h2>Adding Custom Data Sources<a class="headerlink" href="#adding-custom-data-sources" title="Permalink to this heading"></a></h2>
 <p>Although SHARPpy maintains a variety of different sounding data sources in the distributed program, you may want to add your own to the program.  In the past, the developers have incorporated datastreams from other experimental NWP runs including the <a class="reference external" href="https://mpas-dev.github.io">MPAS</a> and the <a class="reference external" href="https://ensemble.ucar.edu">NCAR Realtime Ensemble</a> into the program.  We welcome the opportunity to expand the set of sounding data sources available to the general SHARPpy user base.</p>
 <p>To do this, add to the <cite>datasources/</cite> directory an XML file containing the data source information and a CSV file containing all the location information.  We do not recommend modifying the <cite>standard.xml</cite> file, as it may break SHARPpy, and your custom data source information may get overwritten when you update SHARPpy.  If you have a reliable data source that you wish to share with the broader community, please consider submitting a pull request with your proposed changes to Github!</p>
 <ol class="arabic simple">
@@ -200,8 +207,8 @@ The XML file contains the information for how the data source behaves. Questions
 </ul>
 <p>These should all be integer numbers of hours; support for sub-hourly data is forthcoming.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: A start date of the data in the outlet “YYYY/MM/DD”, “now”, or “-“</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code>: A end date of the data in the outlet “YYYY/MM/DD”, “now”, or “-“</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code>: A start date of the data in the outlet “YYYY/MM/DD”, “now”, or “-”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">end</span></code>: A end date of the data in the outlet “YYYY/MM/DD”, “now”, or “-”</p></li>
 </ul>
 <p>These two tags are used to grey out parts of the Calendar that is shown on the Sounding Picker.
 For example, a sounding archive in SHARPpy may have a start date of “1946/01/01” and an end value
@@ -220,8 +227,8 @@ The CSV file contains information about where your profiles are located and what
 <p><em>Optional</em></p>
 <p>4. Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>
 This will install your new data source and allow SHARPpy to find it. If the installation was successful, you should see it in the “Data Sources” drop-down menu.  You should only do this step if you have edited the <cite>datasources/</cite> directory underneath the root of the SHARPpy Github directory.  If you made these modifications within the <cite>~/.sharppy</cite> directory, you will not need to do this step.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

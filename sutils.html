@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sutils package &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>sutils package &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -45,6 +52,7 @@
 <li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
@@ -53,32 +61,13 @@
 <li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">sutils package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-async-module">sutils.async module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-async-threads-module">sutils.async_threads module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-config-module">sutils.config module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-frozensutils-module">sutils.frozensutils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-progress-module">sutils.progress module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-sutils-module">sutils.sutils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.io.html">sharppy.io package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.sharptab.html">sharppy.sharptab package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">sutils package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-async-module">sutils.async module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-async-threads-module">sutils.async_threads module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-config-module">sutils.config module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-frozensutils-module">sutils.frozensutils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-progress-module">sutils.progress module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sutils-sutils-module">sutils.sutils module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils.async">sutils.async module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils.async_threads">sutils.async_threads module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils.config">sutils.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils.frozenutils">sutils.frozenutils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils.progress">sutils.progress module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils.utils">sutils.utils module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sutils">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -112,33 +101,245 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="sutils-package">
-<h1>sutils package<a class="headerlink" href="#sutils-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sutils-async-module">
-<h2>sutils.async module<a class="headerlink" href="#sutils-async-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sutils-async-threads-module">
-<h2>sutils.async_threads module<a class="headerlink" href="#sutils-async-threads-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sutils-config-module">
-<h2>sutils.config module<a class="headerlink" href="#sutils-config-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sutils-frozensutils-module">
-<h2>sutils.frozensutils module<a class="headerlink" href="#sutils-frozensutils-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sutils-progress-module">
-<h2>sutils.progress module<a class="headerlink" href="#sutils-progress-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sutils-sutils-module">
-<h2>sutils.sutils module<a class="headerlink" href="#sutils-sutils-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+  <section id="sutils-package">
+<h1>sutils package<a class="headerlink" href="#sutils-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-sutils.async">
+<span id="sutils-async-module"></span><h2>sutils.async module<a class="headerlink" href="#module-sutils.async" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sutils.async.</span></span><span class="sig-name descname"><span class="pre">AsyncThreads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_threads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>AsyncThreads: A class to generate threads for whenever something can’t run in the main process.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.clearQueue">
+<span class="sig-name descname"><span class="pre">clearQueue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads.clearQueue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads.clearQueue" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the queue of processes waiting to be started and kills any threads currently running.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ret_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads.finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads.finish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.isFinished">
+<span class="sig-name descname"><span class="pre">isFinished</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads.isFinished"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads.isFinished" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a boolean specifying whether the thread corresponding to thread_id is finished.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads.join" title="Permalink to this definition"></a></dt>
+<dd><p>Waits until the thread corresponding to thread_id is finished.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads.post" title="Permalink to this definition"></a></dt>
+<dd><p>Post a thread to be run.
+func:   The function to run in a separate thread
+callback:   The function to run once func() is done. It will be passed the output from func() as a single tuple.
+background [optional]: Boolean specifying whether to run in the background. Background processes are started only</p>
+<blockquote>
+<div><p>if there are no higher-priority processes to run. The default value is False.</p>
+</div></blockquote>
+<p><a href="#id1"><span class="problematic" id="id2">*</span></a>args, <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs: Arguments to func()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.startNext">
+<span class="sig-name descname"><span class="pre">startNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async.html#AsyncThreads.startNext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async.AsyncThreads.startNext" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sutils.async.AsyncThreads.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sutils.async.AsyncThreads.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.async.movePosition">
+<span class="sig-prename descclassname"><span class="pre">sutils.async.</span></span><span class="sig-name descname"><span class="pre">movePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveOperation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode.MoveAnchor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#sutils.async.movePosition" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sutils.async_threads">
+<span id="sutils-async-threads-module"></span><h2>sutils.async_threads module<a class="headerlink" href="#module-sutils.async_threads" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sutils.async_threads.</span></span><span class="sig-name descname"><span class="pre">AsyncThreads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_threads</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>AsyncThreads: A class to generate threads for whenever something can’t run in the main process.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.clearQueue">
+<span class="sig-name descname"><span class="pre">clearQueue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads.clearQueue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads.clearQueue" title="Permalink to this definition"></a></dt>
+<dd><p>Clears the queue of processes waiting to be started and kills any threads currently running.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ret_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads.finish"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads.finish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.isFinished">
+<span class="sig-name descname"><span class="pre">isFinished</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads.isFinished"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads.isFinished" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a boolean specifying whether the thread corresponding to thread_id is finished.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.join">
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads.join"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads.join" title="Permalink to this definition"></a></dt>
+<dd><p>Waits until the thread corresponding to thread_id is finished.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads.post"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads.post" title="Permalink to this definition"></a></dt>
+<dd><p>Post a thread to be run.
+func:   The function to run in a separate thread
+callback:   The function to run once func() is done. It will be passed the output from func() as a single tuple.
+background [optional]: Boolean specifying whether to run in the background. Background processes are started only</p>
+<blockquote>
+<div><p>if there are no higher-priority processes to run. The default value is False.</p>
+</div></blockquote>
+<p><a href="#id5"><span class="problematic" id="id6">*</span></a>args, <a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs: Arguments to func()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.startNext">
+<span class="sig-name descname"><span class="pre">startNext</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/async_threads.html#AsyncThreads.startNext"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.async_threads.AsyncThreads.startNext" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sutils.async_threads.AsyncThreads.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sutils.async_threads.AsyncThreads.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.async_threads.movePosition">
+<span class="sig-prename descclassname"><span class="pre">sutils.async_threads.</span></span><span class="sig-name descname"><span class="pre">movePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveOperation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode.MoveAnchor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#sutils.async_threads.movePosition" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sutils.config">
+<span id="sutils-config-module"></span><h2>sutils.config module<a class="headerlink" href="#module-sutils.config" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sutils.config.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sutils.config.</span></span><span class="sig-name descname"><span class="pre">Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/config.html#Config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.config.Config" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<p>The Config class keeps track of the configuration in a QObject, so that it
+can be passed via signals and slots.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.config.Config.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfg_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/config.html#Config.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.config.Config.initialize" title="Permalink to this definition"></a></dt>
+<dd><p>Add items in the configuration. This function doesn’t modify items that already exist.
+cfg_dict:   A dictionary of configuration items. Keys are (section, field) tuples, and the values</p>
+<blockquote>
+<div><p>are the configuration values.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sutils.config.Config.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sutils.config.Config.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.config.Config.toFile">
+<span class="sig-name descname"><span class="pre">toFile</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/config.html#Config.toFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.config.Config.toFile" title="Permalink to this definition"></a></dt>
+<dd><p>Write the configuration to the file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.config.movePosition">
+<span class="sig-prename descclassname"><span class="pre">sutils.config.</span></span><span class="sig-name descname"><span class="pre">movePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveOperation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode.MoveAnchor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#sutils.config.movePosition" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sutils.frozenutils">
+<span id="sutils-frozenutils-module"></span><h2>sutils.frozenutils module<a class="headerlink" href="#module-sutils.frozenutils" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sutils.frozenutils.Process">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sutils.frozenutils.</span></span><span class="sig-name descname"><span class="pre">Process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daemon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/frozenutils.html#Process"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.frozenutils.Process" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.frozenutils.freezeSupport">
+<span class="sig-prename descclassname"><span class="pre">sutils.frozenutils.</span></span><span class="sig-name descname"><span class="pre">freezeSupport</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/frozenutils.html#freezeSupport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.frozenutils.freezeSupport" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.frozenutils.frozenPath">
+<span class="sig-prename descclassname"><span class="pre">sutils.frozenutils.</span></span><span class="sig-name descname"><span class="pre">frozenPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/frozenutils.html#frozenPath"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.frozenutils.frozenPath" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.frozenutils.isFrozen">
+<span class="sig-prename descclassname"><span class="pre">sutils.frozenutils.</span></span><span class="sig-name descname"><span class="pre">isFrozen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/frozenutils.html#isFrozen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.frozenutils.isFrozen" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sutils.progress">
+<span id="sutils-progress-module"></span><h2>sutils.progress module<a class="headerlink" href="#module-sutils.progress" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.progress.movePosition">
+<span class="sig-prename descclassname"><span class="pre">sutils.progress.</span></span><span class="sig-name descname"><span class="pre">movePosition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveOperation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg__2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">PySide2.QtGui.QTextCursor.MoveMode.MoveAnchor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#sutils.progress.movePosition" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sutils.progress.progress">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sutils.progress.</span></span><span class="sig-name descname"><span class="pre">progress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/progress.html#progress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.progress.progress" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QObject</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.progress.progress.doasync">
+<span class="sig-name descname"><span class="pre">doasync</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/progress.html#progress.doasync"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.progress.progress.doasync" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sutils.progress.progress.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sutils.progress.progress.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.progress.progress.updateProgress">
+<span class="sig-name descname"><span class="pre">updateProgress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maximum</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/progress.html#progress.updateProgress"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.progress.progress.updateProgress" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sutils.progress.progress.updateText">
+<span class="sig-name descname"><span class="pre">updateText</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/progress.html#progress.updateText"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.progress.progress.updateText" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sutils.utils">
+<span id="sutils-utils-module"></span><h2>sutils.utils module<a class="headerlink" href="#module-sutils.utils" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.utils.is_py3">
+<span class="sig-prename descclassname"><span class="pre">sutils.utils.</span></span><span class="sig-name descname"><span class="pre">is_py3</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/utils.html#is_py3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.utils.is_py3" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sutils.utils.total_seconds">
+<span class="sig-prename descclassname"><span class="pre">sutils.utils.</span></span><span class="sig-name descname"><span class="pre">total_seconds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">td</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sutils/utils.html#total_seconds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sutils.utils.total_seconds" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sutils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sutils" title="Permalink to this heading"></a></h2>
+</section>
+</section>
 
 
            </div>

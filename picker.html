@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Running SHARPpy &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Running SHARPpy &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -55,7 +62,7 @@
 <li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
@@ -85,10 +92,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="running-sharppy">
-<span id="using-the-data-picker"></span><h1>Running SHARPpy<a class="headerlink" href="#running-sharppy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="launching-the-program">
-<h2>Launching the Program<a class="headerlink" href="#launching-the-program" title="Permalink to this headline">¶</a></h2>
+  <section id="running-sharppy">
+<span id="using-the-data-picker"></span><h1>Running SHARPpy<a class="headerlink" href="#running-sharppy" title="Permalink to this heading"></a></h1>
+<section id="launching-the-program">
+<h2>Launching the Program<a class="headerlink" href="#launching-the-program" title="Permalink to this heading"></a></h2>
 <p>If you installed the pre-compiled binary, simply double click on the SHARPpy program on your computer.
 If you installed from source or from a package manager, navigate to your terminal and type
 in the following command into the the command line:</p>
@@ -100,22 +107,24 @@ span.prompt1:before {
 </pre></div></div><p>If the X-window is enabled (most desktops will have this already available), the Sounding Picker should launch.</p>
 <p>As mentioned, installing via command line allows the user to access both the libraries for scripting and also the GUI interface.
 The following sections will discuss the GUI functionality.  For more information about scripting with SHARPpy see the <a class="reference internal" href="scripting.html#scripting"><span class="std std-ref">Scripting</span></a> page.</p>
-</div>
-<div class="section" id="the-sounding-picker">
-<h2>The Sounding Picker<a class="headerlink" href="#the-sounding-picker" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-sounding-picker">
+<h2>The Sounding Picker<a class="headerlink" href="#the-sounding-picker" title="Permalink to this heading"></a></h2>
 <p>Launching the SHARPpy program (from the command line or from the binaries) should load up the SHARPpy Sounding Picker:</p>
-<div class="figure align-center" id="id1">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/picker_example.png"><img alt="_images/picker_example.png" src="_images/picker_example.png" style="width: 688.1999999999999px; height: 442.8px;" /></a>
-<p class="caption"><span class="caption-text">The SHARPpy Sounding Picker window showing the locations where observed sounding data may be examined through the program interface.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">The SHARPpy Sounding Picker window showing the locations where observed sounding data may be examined through the program interface.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>The Picker is an interface where the metadata for sounding data sources may be examined in order to help select the sounding data the user wishes to analyze.  In this window, users can select the data source (top left) which includes both observed and modeled sounding datasets.  For each sounding source, a data cycle time can be selected.  For observed data, this will generally be at 00 and 12 UTC.  For modeled data, the data may be available at hourly or synoptic time intervals (e.g., 00, 06, 12, or 18 UTC).  If point forecast soundings are desired by the user from different models (e.g., GFS), the “Select Forecast Time” list will be populated to show the model forecast times available from that model.  This list can be used to load subsets of the model run data into SHARPpy for analysis.</p>
 <p>After the data source and times are selected, the map to the right will be populated with red points indicating the sounding locations available.  While the program does default to U.S. locations, the map can be reoriented by clicking and dragging the map area.  Double clicking on the map will center the map to the cursor location.  Other global maps (e.g., Tropics and Southern Hemisphere) can be selected from the drop down box.  Should you wish to save your map view as the new default map view, you can click the “Save Map View as Default” box in the top right.  Selection of a sounding data site will turn that site green on the map.  Once a sounding data site is selected, you can click “Generate Profiles” to download the data and analyze it in the SHARPpy GUI.</p>
-</div>
-<div class="section" id="default-data-sources">
-<h2>Default Data Sources<a class="headerlink" href="#default-data-sources" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="default-data-sources">
+<h2>Default Data Sources<a class="headerlink" href="#default-data-sources" title="Permalink to this heading"></a></h2>
 <p>SHARPpy links into various datasets around the web to allow the user to explore a variety of observed and modeling datasets.  Combined, these datasets offer SHARPpy users accessiblity to <strong>over 100 million different sounding data files</strong> directly from the Picker.  Links to these datasets come default with the SHARPpy package and files pointing SHARPpy to these datasets are placed in the user’s home directory underneath a directory called <cite>.sharppy/</cite>.  Unless you are attempting to install additional data sources that SHARPpy can read (see <a class="reference internal" href="datasource_guide.html#custom-data-sources"><span class="std std-ref">Custom Data Sources</span></a>), this folder should not be modified.</p>
 <table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">Default SHARPpy Data Sources</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Default SHARPpy Data Sources</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
 <colgroup>
 <col style="width: 24%" />
 <col style="width: 59%" />
@@ -156,10 +165,12 @@ The following sections will discuss the GUI functionality.  For more information
 <p class="admonition-title">Warning</p>
 <p>While we have taken care to provide accurate data through SHARPpy, errors may occur due to various reasons.  Because of this reason, the users should use this data at their own risk and should take care to scrutinize the data provided.  This data is provided without any warranty of accuracy.</p>
 </div>
-<div class="figure align-center" id="id3">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="http://sharp.weather.ou.edu/soundings/obs/recent.png"><img alt="http://sharp.weather.ou.edu/soundings/obs/recent.png" src="http://sharp.weather.ou.edu/soundings/obs/recent.png" /></a>
-<p class="caption"><span class="caption-text">A real-time status plot from the SHARP server generated for the last (00 or 12 UTC) sounding dataset available.  Each point indicates a location where sounding data was found on the Unidata stream.  The color of each point indicates the status of the data in the processing steps.  Green data points indicate data files that were able to be generated by the merge script and passed the SHARPpy data integrity checks.  Yellow data points indicate data files that were created, but threw an exception when passed to SHARPpy (likely due to data integrity issues).  Red data points are locations where the merge script failed and are likely due to incomplete data in the Unidata stream.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">A real-time status plot from the SHARP server generated for the last (00 or 12 UTC) sounding dataset available.  Each point indicates a location where sounding data was found on the Unidata stream.  The color of each point indicates the status of the data in the processing steps.  Green data points indicate data files that were able to be generated by the merge script and passed the SHARPpy data integrity checks.  Yellow data points indicate data files that were created, but threw an exception when passed to SHARPpy (likely due to data integrity issues).  Red data points are locations where the merge script failed and are likely due to incomplete data in the Unidata stream.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
 <p>The data provided by Penn State is provided in the Bufkit format.  The foreast soundings provided within this format are derived directly from the model native vertical grid; no interpolation is performed.  Often, the forecast sounding points are located at stations where METAR observations can be found.  The forecast sounding points have been chosen by the scientists at <a class="reference external" href="http://www.emc.ncep.noaa.gov">NOAA’s Environmental Modeling Center</a> as a part of their mission to support NOAA’s mission. Although we are persuing various options for expanding the various sounding points from these models, <em>we do not have the ability to add more data points</em>.  The IEM BUFKIT archive provides SHARPpy users Bufkit files for various NCEP models going back to 2010.</p>
 <p><a class="reference external" href="https://weather.msfc.nasa.gov/nucaps/">NUCAPS</a> is satellite sounding product that retrieves temperature and moisture at 100 vertical levels in both clear to partly-cloud scenes. The NUCAPS data are provided by <a class="reference external" href="https://weather.msfc.nasa.gov/sport/">NASA-SPoRT</a> in collaboration with the <a class="reference external" href="https://stcnet.com/">Science and Technology Corp.</a>. Profiles are originally obtained from <a class="reference external" href="https://www.jpss.noaa.gov/direct_broadcast_partners.html">JPSS Direct Broadcast partners</a>. Direct broadcast reduces the data latency and allows for real-time data access. The temperature and water vapor profiles are converted to proper units and into a text format that is readable by SHARPpy. Data distribution is supported by the <a class="reference external" href="https://www.jpss.noaa.gov/proving_ground.html">JPSS Risk Reduction and Proving Ground</a>.</p>
 <div class="admonition note">
@@ -170,23 +181,23 @@ The following sections will discuss the GUI functionality.  For more information
 <p class="admonition-title">Warning</p>
 <p>Occasionally, the default data sources go down in SHARPpy.  With the exception of the SHARP dataset, these issues are largely outside of our control and may often be resolved by trying to access the data again at another time.</p>
 </div>
-</div>
-<div class="section" id="batch-mode">
-<h2>Batch Mode<a class="headerlink" href="#batch-mode" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="batch-mode">
+<h2>Batch Mode<a class="headerlink" href="#batch-mode" title="Permalink to this heading"></a></h2>
 <p>If you installed via the command line, the SHARPpy batch mode may be accessible through the <strong class="command">sharppy</strong> command.
 In this mode, the Picker and GUI may be bypassed to generate images of the SHARPpy GUI to show your data.</p>
-<div class="section" id="examples">
-<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h3>
 <p>To generate a plot of the test data included in SHARPpy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sharppy examples/data/14061619.OAX</span>
 </pre></div></div><p>To generate a plot of the 00 UTC sounding released from Dayton, Ohio during the 1974 Super Outbreak:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sharppy --datasource Observed --station DAY --datetime <span class="m">19740404</span>/00</span>
 </pre></div></div><p>To learn more about the batch mode commands:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sharppy --help</span>
-</pre></div></div></div>
-</div>
-<div class="section" id="when-things-go-wrong">
-<h2>When things go wrong<a class="headerlink" href="#when-things-go-wrong" title="Permalink to this headline">¶</a></h2>
+</pre></div></div></section>
+</section>
+<section id="when-things-go-wrong">
+<h2>When things go wrong<a class="headerlink" href="#when-things-go-wrong" title="Permalink to this heading"></a></h2>
 <p>Occasionally, bugs arise in programs.  To better understand them and communicate them to others,
 the user can use modifier <code class="docutils literal notranslate"><span class="pre">--debug</span></code> to turn on logging:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">sharppy --debug</span>
@@ -196,8 +207,8 @@ Versioning info may also be output from the <strong class="command">sharppy</str
 </pre></div></div><p>Versioning is also output when the About box is launched by the user from the program.  These
 tools may be used when debugging the code and <a class="reference external" href="https://github.com/sharppy/SHARPpy/issues">submitting bug reports to Github</a>:
 Please submit log files and versioning information when submitting issues.</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>

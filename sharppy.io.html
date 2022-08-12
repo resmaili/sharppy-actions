@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sharppy.io package &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>sharppy.io package &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -45,41 +52,21 @@
 <li class="toctree-l1"><a class="reference internal" href="interacting_gui.html">Interacting with the GUI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasource_guide.html">Custom Data Sources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripting.html">Scripting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">sharppy.io package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-arw-decoder-module">sharppy.io.arw_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-buf-decoder-module">sharppy.io.buf_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-csv-module">sharppy.io.csv module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-decoder-module">sharppy.io.decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-pecan-decoder-module">sharppy.io.pecan_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-qc-tools-module">sharppy.io.qc_tools module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-spc-decoder-module">sharppy.io.spc_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-uwyo-decoder-module">sharppy.io.uwyo_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.sharptab.html">sharppy.sharptab package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.viz.html">sharppy.viz package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sutils.html">sutils package</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">SHARPpy</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sharppy.databases.html">sharppy.databases package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">sharppy.io package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-arw-decoder-module">sharppy.io.arw_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-buf-decoder-module">sharppy.io.buf_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-csv-module">sharppy.io.csv module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-decoder-module">sharppy.io.decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-pecan-decoder-module">sharppy.io.pecan_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-qc-tools-module">sharppy.io.qc_tools module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-spc-decoder-module">sharppy.io.spc_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sharppy-io-uwyo-decoder-module">sharppy.io.uwyo_decoder module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.arw_decoder">sharppy.io.arw_decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.buf_decoder">sharppy.io.buf_decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.csv">sharppy.io.csv module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.decoder">sharppy.io.decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.pecan_decoder">sharppy.io.pecan_decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.qc_tools">sharppy.io.qc_tools module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.spc_decoder">sharppy.io.spc_decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io.uwyo_decoder">sharppy.io.uwyo_decoder module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-sharppy.io">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sharppy.sharptab.html">sharppy.sharptab package</a></li>
@@ -116,40 +103,274 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="sharppy-io-package">
-<span id="sharppy-io"></span><h1>sharppy.io package<a class="headerlink" href="#sharppy-io-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+  <section id="sharppy-io-package">
+<span id="sharppy-io"></span><h1>sharppy.io package<a class="headerlink" href="#sharppy-io-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <p>Input/Output routines to read various human-readable text datasets.</p>
-</div>
-<div class="section" id="sharppy-io-arw-decoder-module">
-<h2>sharppy.io.arw_decoder module<a class="headerlink" href="#sharppy-io-arw-decoder-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-buf-decoder-module">
-<h2>sharppy.io.buf_decoder module<a class="headerlink" href="#sharppy-io-buf-decoder-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-csv-module">
-<h2>sharppy.io.csv module<a class="headerlink" href="#sharppy-io-csv-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-decoder-module">
-<h2>sharppy.io.decoder module<a class="headerlink" href="#sharppy-io-decoder-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-pecan-decoder-module">
-<h2>sharppy.io.pecan_decoder module<a class="headerlink" href="#sharppy-io-pecan-decoder-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-qc-tools-module">
-<h2>sharppy.io.qc_tools module<a class="headerlink" href="#sharppy-io-qc-tools-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-spc-decoder-module">
-<h2>sharppy.io.spc_decoder module<a class="headerlink" href="#sharppy-io-spc-decoder-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="sharppy-io-uwyo-decoder-module">
-<h2>sharppy.io.uwyo_decoder module<a class="headerlink" href="#sharppy-io-uwyo-decoder-module" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
+</section>
+<section id="module-sharppy.io.arw_decoder">
+<span id="sharppy-io-arw-decoder-module"></span><h2>sharppy.io.arw_decoder module<a class="headerlink" href="#module-sharppy.io.arw_decoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.arw_decoder.ARWDecoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.arw_decoder.</span></span><span class="sig-name descname"><span class="pre">ARWDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/arw_decoder.html#ARWDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.arw_decoder.ARWDecoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sharppy.io.decoder.Decoder" title="sharppy.io.decoder.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decoder</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-sharppy.io.buf_decoder">
+<span id="sharppy-io-buf-decoder-module"></span><h2>sharppy.io.buf_decoder module<a class="headerlink" href="#module-sharppy.io.buf_decoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.buf_decoder.BufDecoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.buf_decoder.</span></span><span class="sig-name descname"><span class="pre">BufDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/buf_decoder.html#BufDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.buf_decoder.BufDecoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sharppy.io.decoder.Decoder" title="sharppy.io.decoder.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decoder</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-sharppy.io.csv">
+<span id="sharppy-io-csv-module"></span><h2>sharppy.io.csv module<a class="headerlink" href="#module-sharppy.io.csv" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.csv.loadCSV">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.csv.</span></span><span class="sig-name descname"><span class="pre">loadCSV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/csv.html#loadCSV"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.csv.loadCSV" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sharppy.io.decoder">
+<span id="sharppy-io-decoder-module"></span><h2>sharppy.io.decoder module<a class="headerlink" href="#module-sharppy.io.decoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.decoder.Decoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.decoder.</span></span><span class="sig-name descname"><span class="pre">Decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#Decoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.Decoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="sharppy.io.decoder.Decoder.getProfiles">
+<span class="sig-name descname"><span class="pre">getProfiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indexes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#Decoder.getProfiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.Decoder.getProfiles" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a list of profile objects generated from the
+file that was read in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>prof_idxs</strong> (<em>list</em><em> (</em><em>optional</em><em>)</em>) – A list of indices corresponding to the profiles to be returned.
+Default is to return the full list of profiles</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sharppy.io.decoder.Decoder.getStnId">
+<span class="sig-name descname"><span class="pre">getStnId</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#Decoder.getStnId"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.Decoder.getStnId" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.decoder.abstract">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.decoder.</span></span><span class="sig-name descname"><span class="pre">abstract</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#abstract"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.abstract" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.decoder.findDecoders">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.decoder.</span></span><span class="sig-name descname"><span class="pre">findDecoders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#findDecoders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.findDecoders" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.decoder.getDecoder">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.decoder.</span></span><span class="sig-name descname"><span class="pre">getDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dec_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#getDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.getDecoder" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.decoder.getDecoders">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.decoder.</span></span><span class="sig-name descname"><span class="pre">getDecoders</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/decoder.html#getDecoders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.decoder.getDecoders" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-sharppy.io.pecan_decoder">
+<span id="sharppy-io-pecan-decoder-module"></span><h2>sharppy.io.pecan_decoder module<a class="headerlink" href="#module-sharppy.io.pecan_decoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.pecan_decoder.PECANDecoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.pecan_decoder.</span></span><span class="sig-name descname"><span class="pre">PECANDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/pecan_decoder.html#PECANDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.pecan_decoder.PECANDecoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sharppy.io.decoder.Decoder" title="sharppy.io.decoder.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decoder</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-sharppy.io.qc_tools">
+<span id="sharppy-io-qc-tools-module"></span><h2>sharppy.io.qc_tools module<a class="headerlink" href="#module-sharppy.io.qc_tools" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.isDWPCValid">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">isDWPCValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dwpc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#isDWPCValid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.isDWPCValid" title="Permalink to this definition"></a></dt>
+<dd><p>This function checks to see if valid dewpoint (Celsius)
+values are within the dwpc array that is passed to the
+Profile object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dwpc</strong> (<em>the dewpoint array</em><em> (</em><em>Celsius</em><em>)</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>True/False</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the values in the dewpoint array are all above absolute zero.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.isHGHTValid">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">isHGHTValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hght</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#isHGHTValid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.isHGHTValid" title="Permalink to this definition"></a></dt>
+<dd><p>This function checks to see if valid height (m)
+values are within the hght array that is passed to the
+Profile object</p>
+<dl>
+<dt>True/False: True If:</dt><dd><p>1.) height array length is &gt; 0
+2.) height array is not filled with masked values
+3.) if the height array is increasing with the index</p>
+<blockquote>
+<div><p>and there are no repeat values.</p>
+</div></blockquote>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hght</strong> (<em>array</em>) – height array (m)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>value</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.isPRESValid">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">isPRESValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pres</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#isPRESValid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.isPRESValid" title="Permalink to this definition"></a></dt>
+<dd><p>This function checks to see if valid pressure (mb)
+values are within the pres array that is passed to the
+Profile object</p>
+<dl>
+<dt>True If:</dt><dd><p>1.) pressure array length is &gt; 1
+2.) pressure array is not filled with masked values
+3.) if the pressure array is decreasing with the index</p>
+<blockquote>
+<div><p>and there are no repeat values.</p>
+</div></blockquote>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pres</strong> (<em>array</em>) – pressure array (mb)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>value</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.isTMPCValid">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">isTMPCValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tmpc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#isTMPCValid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.isTMPCValid" title="Permalink to this definition"></a></dt>
+<dd><p>This function checks to see if valid temperature (Celsius)
+values are within the tmpc array that is passed to the
+Profile object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tmpc</strong> (<em>the temperature array</em><em> (</em><em>Celsius</em><em>)</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>True/False</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the values in the temperature array are all above absolute zero.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.isWSPDValid">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">isWSPDValid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wspd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#isWSPDValid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.isWSPDValid" title="Permalink to this definition"></a></dt>
+<dd><p>This function checks to see if valid wind speed (knots)
+values are within the wspd array that is passed to the
+Profile object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wspd</strong> (<em>the wind speed array</em><em> (</em><em>knots</em><em>)</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>True/False</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if the wind speeds in the wspd array are all &gt;= 0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.numMasked">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">numMasked</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#numMasked"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.numMasked" title="Permalink to this definition"></a></dt>
+<dd><p>This function returns the number of unmasked array elements as well as the
+length of the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>masked numpy array</em>) – The maksed numpy array</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>count</strong> (<em>number</em>) – the number of unmasked array elements</p></li>
+<li><p><strong>length</strong> (<em>number</em>) – the length of the unmasked array</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sharppy.io.qc_tools.raiseError">
+<span class="sig-prename descclassname"><span class="pre">sharppy.io.qc_tools.</span></span><span class="sig-name descname"><span class="pre">raiseError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errorType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/qc_tools.html#raiseError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.qc_tools.raiseError" title="Permalink to this definition"></a></dt>
+<dd><p>This function will raise an exception specified by the errorType variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>string</strong> (<em>str</em>) – the string to be printed out to the user when the exception is thrown</p></li>
+<li><p><strong>errorType</strong> (<em>Exception</em>) – the type of exception.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sharppy.io.spc_decoder">
+<span id="sharppy-io-spc-decoder-module"></span><h2>sharppy.io.spc_decoder module<a class="headerlink" href="#module-sharppy.io.spc_decoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.spc_decoder.SPCDecoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.spc_decoder.</span></span><span class="sig-name descname"><span class="pre">SPCDecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/spc_decoder.html#SPCDecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.spc_decoder.SPCDecoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sharppy.io.decoder.Decoder" title="sharppy.io.decoder.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decoder</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-sharppy.io.uwyo_decoder">
+<span id="sharppy-io-uwyo-decoder-module"></span><h2>sharppy.io.uwyo_decoder module<a class="headerlink" href="#module-sharppy.io.uwyo_decoder" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="sharppy.io.uwyo_decoder.UWYODecoder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sharppy.io.uwyo_decoder.</span></span><span class="sig-name descname"><span class="pre">UWYODecoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sharppy/io/uwyo_decoder.html#UWYODecoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sharppy.io.uwyo_decoder.UWYODecoder" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sharppy.io.decoder.Decoder" title="sharppy.io.decoder.Decoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">Decoder</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sharppy.io.uwyo_decoder.UWYODecoder.MISSING">
+<span class="sig-name descname"><span class="pre">MISSING</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">-9999.0</span></em><a class="headerlink" href="#sharppy.io.uwyo_decoder.UWYODecoder.MISSING" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sharppy.io">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sharppy.io" title="Permalink to this heading"></a></h2>
+</section>
+</section>
 
 
            </div>

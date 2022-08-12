@@ -19,7 +19,7 @@ Welcome to SHARPpy's documentation!
 
 SHARPpy is a collection of open source sounding and hodograph analysis routines, a sounding plotting package, and an interactive, *cross-platform* application for analyzing real-time soundings all written in Python. It was developed to provide the atmospheric science community a free and consistent source of sounding analysis routines. SHARPpy is constantly updated and vetted by professional meteorologists and climatologists within the scientific community to help maintain a standard source of sounding routines.
 
-We currently support Python >= 3.6.
+We currently support Python >= 3.7.
 
 Noteable Links
 ==============
@@ -42,9 +42,7 @@ Noteable Links
    interacting_gui
    datasource_guide
    scripting
-   modules
-   ..
-    auto_examples/index
+   auto_examples/index
    modules
    contributing
    citing

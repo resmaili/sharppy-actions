@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scripting &mdash; SHARPpy  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <title>Scripting &mdash; SHARPpy  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-binder.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-dataframe.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sg_gallery-rendered-html.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="SHARPpy" href="modules.html" />
+    <link rel="next" title="Example scripts" href="auto_examples/index.html" />
     <link rel="prev" title="Custom Data Sources" href="datasource_guide.html" /> 
 </head>
 
@@ -58,7 +65,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#plotting-a-skew-t-using-matplotlib">Plotting a Skew-T using Matplotlib</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Example scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">SHARPpy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="citing.html">Citing</a></li>
@@ -88,14 +95,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="scripting">
-<span id="id1"></span><h1>Scripting<a class="headerlink" href="#scripting" title="Permalink to this headline">¶</a></h1>
+  <section id="scripting">
+<span id="id1"></span><h1>Scripting<a class="headerlink" href="#scripting" title="Permalink to this heading"></a></h1>
 <p>This tutorial is meant to teach the user how to directly interact with the SHARPpy libraries using the Python interpreter. This tutorial will cover reading in files into the the Profile object, plotting the data using Matplotlib, and computing various indices from the data. It is also a reference to the different functions and variables SHARPpy has available to the user.</p>
-<div class="section" id="steps-to-scripting">
-<h2>3 Steps to Scripting<a class="headerlink" href="#steps-to-scripting" title="Permalink to this headline">¶</a></h2>
+<section id="steps-to-scripting">
+<h2>3 Steps to Scripting<a class="headerlink" href="#steps-to-scripting" title="Permalink to this heading"></a></h2>
 <p>For those wishing to run SHARPpy routines using Python scripts, you often will need to perform 3 steps before you can begin running routines.  These three steps read in the data, load in the SHARPpy modules, and convert the data into SHARPpy Profile objects.</p>
-<div class="section" id="step-1-load-in-the-modules">
-<h3>Step 1: Load in the modules.<a class="headerlink" href="#step-1-load-in-the-modules" title="Permalink to this headline">¶</a></h3>
+<section id="step-1-load-in-the-modules">
+<h3>Step 1: Load in the modules.<a class="headerlink" href="#step-1-load-in-the-modules" title="Permalink to this heading"></a></h3>
 <p>All of the SHARPpy routines (parcel lifting, composite indices, etc.)
 reside within the SHARPTAB module.</p>
 <p>SHARPTAB contains 6 modules: params, winds, thermo, utils, interp, fire,
@@ -120,9 +127,9 @@ constants, watch_type</p>
 </pre></div>
 </div>
 <p>To learn more about the functions available in SHARPTAB, access the API here: <a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p>
-</div>
-<div class="section" id="step-2-read-in-the-data">
-<h3>Step 2: Read in the data.<a class="headerlink" href="#step-2-read-in-the-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="step-2-read-in-the-data">
+<h3>Step 2: Read in the data.<a class="headerlink" href="#step-2-read-in-the-data" title="Permalink to this heading"></a></h3>
 <p>For this example, the Pilger, NE tornado proximity sounding from 19 UTC within the tutorial/ directory is an example of the SPC sounding file format that can be read in by the GUI. Here we’ll read it in manually.</p>
 <p>If you want to read in your own data using this function, write a script
 to mimic the data format shown in the 14061619.OAX file found in this
@@ -132,9 +139,9 @@ to plot some of the data.</p>
 <span class="n">spc_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;14061619.OAX&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="step-3-make-a-profile-object">
-<h3>Step 3: Make a Profile object.<a class="headerlink" href="#step-3-make-a-profile-object" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="step-3-make-a-profile-object">
+<h3>Step 3: Make a Profile object.<a class="headerlink" href="#step-3-make-a-profile-object" title="Permalink to this heading"></a></h3>
 <p>Before running any analysis routines on the data, we have to create a
 Profile object first. A Profile object describes the vertical
 thermodynamic and kinematic profiles and is the key object that all
@@ -225,10 +232,10 @@ easier for SHARPpy to work with, you can use a sounding filter such as
 the one found here:</p>
 <p><a class="reference external" href="https://github.com/tsupinie/SoundingFilter">https://github.com/tsupinie/SoundingFilter</a></p>
 </div>
-</div>
-</div>
-<div class="section" id="viewing-the-profiles">
-<h2>Viewing the Profiles<a class="headerlink" href="#viewing-the-profiles" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="viewing-the-profiles">
+<h2>Viewing the Profiles<a class="headerlink" href="#viewing-the-profiles" title="Permalink to this heading"></a></h2>
 <p>Data can be plotted using Matplotlib by accessing the attributes of the Profile object.  Below is an example of
 Python code plotting the temperature and dewpoint profiles with height:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -273,9 +280,9 @@ the user too.</p>
 </pre></div>
 </div>
 <img alt="_images/SHARPpy_basics_26_0.png" src="_images/SHARPpy_basics_26_0.png" />
-</div>
-<div class="section" id="lifting-parcels">
-<h2>Lifting parcels<a class="headerlink" href="#lifting-parcels" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="lifting-parcels">
+<h2>Lifting parcels<a class="headerlink" href="#lifting-parcels" title="Permalink to this heading"></a></h2>
 <p>In SHARPpy, parcels are lifted via the params.parcelx() routine. The
 parcelx() routine takes in the arguments of a Profile object and a flag
 to indicate what type of parcel you would like to be lifted. Additional
@@ -361,9 +368,9 @@ parcel object (pcl):</p>
 <span class="n">pcl</span><span class="o">.</span><span class="n">bminpres</span> <span class="o">-</span> <span class="n">Buoyancy</span> <span class="n">minimum</span> <span class="n">pressure</span> <span class="p">(</span><span class="n">mb</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="calculating-kinematic-indicies">
-<h2>Calculating kinematic indicies<a class="headerlink" href="#calculating-kinematic-indicies" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculating-kinematic-indicies">
+<h2>Calculating kinematic indicies<a class="headerlink" href="#calculating-kinematic-indicies" title="Permalink to this heading"></a></h2>
 <p>SHARPpy also allows the user to compute kinematic variables such as
 shear, mean-winds, and storm relative helicity. SHARPpy will also
 compute storm motion vectors based off of the work by Stephen Corfidi
@@ -418,9 +425,9 @@ following:</p>
 <span class="mi">0</span><span class="o">-</span><span class="mi">3</span> <span class="n">km</span> <span class="n">Storm</span> <span class="n">Relative</span> <span class="n">Helicity</span> <span class="p">[</span><span class="n">m2</span><span class="o">/</span><span class="n">s2</span><span class="p">]:</span> <span class="mf">584.016767705</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="calculating-other-indices">
-<h2>Calculating other indices<a class="headerlink" href="#calculating-other-indices" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calculating-other-indices">
+<h2>Calculating other indices<a class="headerlink" href="#calculating-other-indices" title="Permalink to this heading"></a></h2>
 <p>The effective inflow layer is occasionally used to derive other variables that
 may be used to explain a storm’s behavior.  Here are a few examples of
 how to compute variables that require the effective inflow layer in
@@ -463,9 +470,9 @@ order to calculate them:</p>
 <span class="n">Significant</span> <span class="n">Tornado</span> <span class="n">Parameter</span> <span class="p">(</span><span class="n">fixed</span><span class="p">):</span> <span class="mf">13.6576402964</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="plotting-a-skew-t-using-matplotlib">
-<h2>Plotting a Skew-T using Matplotlib<a class="headerlink" href="#plotting-a-skew-t-using-matplotlib" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="plotting-a-skew-t-using-matplotlib">
+<h2>Plotting a Skew-T using Matplotlib<a class="headerlink" href="#plotting-a-skew-t-using-matplotlib" title="Permalink to this heading"></a></h2>
 <p>Now, let’s try to plot the data on a Skew-T. You may want to do this if
 you’re looking to create a plot for use in a publication.</p>
 <p>First, we need to tell Matplotlib (the Python plotting package) that
@@ -495,7 +502,7 @@ trace. Let’s also include dry adiabats and moist adiabats for the user.</p>
     <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">presvals</span><span class="p">:</span>
         <span class="n">tw</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">thermo</span><span class="o">.</span><span class="n">wetlift</span><span class="p">(</span><span class="mf">1000.</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span>
     <span class="c1"># Plot the moist-adiabat with a black line that is faded a bit.</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="n">presvals</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="n">presvals</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
 
 <span class="c1"># A function to calculate the dry adiabats</span>
 <span class="k">def</span> <span class="nf">thetas</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span> <span class="n">presvals</span><span class="p">):</span>
@@ -503,7 +510,7 @@ trace. Let’s also include dry adiabats and moist adiabats for the user.</p>
 
 <span class="c1"># plot the dry adiabats</span>
 <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">thetas</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">presvals</span><span class="p">),</span> <span class="n">presvals</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=.</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">thetas</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">presvals</span><span class="p">),</span> <span class="n">presvals</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.2</span><span class="p">)</span>
 
 <span class="c1"># plot the title.</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39; OAX 140616/1900 (Observed)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
@@ -535,15 +542,15 @@ trace. Let’s also include dry adiabats and moist adiabats for the user.</p>
 </pre></div>
 </div>
 <img alt="_images/SHARPpy_basics_39_0.png" src="_images/SHARPpy_basics_39_0.png" />
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="datasource_guide.html" class="btn btn-neutral float-left" title="Custom Data Sources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="modules.html" class="btn btn-neutral float-right" title="SHARPpy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="auto_examples/index.html" class="btn btn-neutral float-right" title="Example scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
