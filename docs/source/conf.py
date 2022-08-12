@@ -46,12 +46,12 @@ extensions = ['sphinx.ext.napoleon',
               'sphinx_gallery.gen_gallery',
               'sphinx-prompt']
 
-# sphinx_gallery_conf = {
-#      # path to your examples scripts
-#      'examples_dirs': '../../examples',
-#      # path where to save gallery generated examples
-#      'gallery_dirs': 'auto_examples',
-# }
+sphinx_gallery_conf = {
+     # path to your examples scripts
+     'examples_dirs': '../../examples',
+     # path where to save gallery generated examples
+     'gallery_dirs': 'auto_examples',
+}
 
 #autodoc_mock_imports = ["numpy", "qtpy"]
 
