@@ -1,11 +1,11 @@
 sutils package
-=============
+==================================
 
 Submodules
-----------
+----------------------------------
 
 sutils.async module
-------------------
+----------------------------------
 
 .. automodule:: sutils.async
     :members:
@@ -13,7 +13,7 @@ sutils.async module
     :show-inheritance:
 
 sutils.async\_threads module
----------------------------
+----------------------------------
 
 .. automodule:: sutils.async_threads
     :members:
@@ -21,40 +21,40 @@ sutils.async\_threads module
     :show-inheritance:
 
 sutils.config module
--------------------
+----------------------------------
 
 .. automodule:: sutils.config
     :members:
     :undoc-members:
     :show-inheritance:
 
-sutils.frozensutils module
-------------------------
+sutils.frozenutils module
+----------------------------------
 
-.. automodule:: sutils.frozensutils
+.. automodule:: sutils.frozenutils
     :members:
     :undoc-members:
     :show-inheritance:
 
 sutils.progress module
----------------------
+----------------------------------
 
 .. automodule:: sutils.progress
     :members:
     :undoc-members:
     :show-inheritance:
 
-sutils.sutils module
-------------------
+sutils.utils module
+----------------------------------
 
-.. automodule:: sutils.sutils
+.. automodule:: sutils.utils
     :members:
     :undoc-members:
     :show-inheritance:
 
 
 Module contents
----------------
+----------------------------------
 
 .. automodule:: sutils
     :members:

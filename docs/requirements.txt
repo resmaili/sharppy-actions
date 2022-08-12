@@ -1,4 +1,11 @@
+numpy
+matplotlib
+pyside2
+sphinx
+qtpy
 sphinx_rtd_theme
+sphinx-gallery
+requests
+python-dateutil
 sphinx-prompt
 pydocstyle
-matplotlib

@@ -44,15 +44,15 @@ author = 'Blumberg, W.G, Halbert, K.T., Supinie, T.A., Marsh, P.T., Thompson, R.
 extensions = ['sphinx.ext.napoleon',
               'sphinx.ext.viewcode',
               'sphinx.ext.autodoc',
-              # 'sphinx_gallery.gen_gallery',
+              'sphinx_gallery.gen_gallery',
               'sphinx-prompt']
 
-# sphinx_gallery_conf = {
-#      # path to your examples scripts
-#      'examples_dirs': '../../examples',
-#      # path where to save gallery generated examples
-#      'gallery_dirs': 'auto_examples',
-# }
+sphinx_gallery_conf = {
+     # path to your examples scripts
+     'examples_dirs': '../../examples',
+     # path where to save gallery generated examples
+     'gallery_dirs': 'auto_examples',
+}
 
 #autodoc_mock_imports = ["numpy", "qtpy"]
 

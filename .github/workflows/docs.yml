@@ -3,6 +3,7 @@ on:
   push:
     # paths:
     #   - docs/**
+
 jobs:
   docs:
     runs-on: ubuntu-latest
@@ -12,71 +13,35 @@ jobs:
       with:
         fetch-depth: 1
 
-    - name: Build sphinx docs
-      uses: ammaraskar/sphinx-action@master
+    # This off the shelf is faster, but doesn't support autodoc/sphinx_gallery
+    # - name: Build sphinx docs
+    #   uses: ammaraskar/sphinx-action@master
+    #   with:
+    #     docs-folder: "docs/"
+
+    # Manual install - works but takes longer
+    - name: Install Conda and Environment
+      uses: ./.github/actions/install-conda
       with:
-        docs-folder: "docs/"
+        python-version: 3.9
 
-    # - name: special files
-    #   shell: bash -l {0}
-    #   run: |
-    #     cd docs/build/html/
-    #     touch .nojekyll
-    #     cp ~/LICENCE.md .
-    #     cp ~/README.md .
+    - name: Build documents
+      shell: bash -l {0}
+      run: |
+        conda activate devel
+        pip install -e .
 
-      # Installs environment
-    # - name: Install Conda and Environment
-    #   uses: ./.github/actions/install-conda
-    #   with:
-    #     python-version: 3.9
-    #
-    # - name: Build documents
-    #   shell: bash -l {0}
-    #   run: |
-    #     conda activate devel
-    #     pip install -e .
-    #
-    #     cd docs
-    #
-    #     cp ../LICENSE.rst ../docs/source/license.rst
-    #     cp ../CONTRIBUTING.rst ../docs/source/contributing.rst
-    #     cp ../CHANGELOG.rst ../docs/source/changelog.rst
-    #
-    #     make html
-    #
-    #     cd ..
+        cd docs
 
-    # Create an artifact of the html output.
-    # - name: Upload build artifacts
-    #   uses: actions/upload-artifact@v1
-    #   with:
-    #     name: DocumentationHTML
-    #     path: docs/build/html/
+        cp ../LICENSE.rst ../docs/source/license.rst
+        cp ../CONTRIBUTING.rst ../docs/source/contributing.rst
+        cp ../CHANGELOG.rst ../docs/source/changelog.rst
 
-    # Publish built docs to gh-pages branch.
-    # - name: Commit documentation changes
-    #   run: |
-    #     git config --local user.email "${{ secrets.GH_MAIL }}"
-    #     git config --local user.name ${{ secrets.GH_USER }}
-    #
-    #     git clone https://github.com/resmaili/sharppy-actions.git --branch gh-pages --single-branch gh-pages
-    #
-    #     # cp -r docs/build/html/* gh-pages/
-    #     # cd gh-pages
-    #     cd docs/build/html/
-    #
-    #     touch .nojekyll
-    #
-    #     git add .
-    #     git commit -m "Update documentation" -a || true
-    #
-    # - name: Push changes
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     branch: gh-pages
-    #     directory: docs/build/html
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+        make html
+
+        touch html/.nojekyll
+
+        cd ..
 
     - name: Deploy docs to gh-pages
       uses: JamesIves/github-pages-deploy-action@v4
