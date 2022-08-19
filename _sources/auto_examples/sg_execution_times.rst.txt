@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:00.464** total execution time for **auto_examples** files:
+**00:00.594** total execution time for **auto_examples** files:
 
 +---------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_plot_sars.py` (``plot_sars.py``) | 00:00.464 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_plot_sars.py` (``plot_sars.py``) | 00:00.594 | 0.0 MB |
 +---------------------------------------------------------------+-----------+--------+
